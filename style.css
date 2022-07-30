@@ -298,8 +298,9 @@ header{
 .potfolio-content{
     display: grid;
     grid-template-columns: repeat(2,1fr);
+    width: 80%;
     gap: 2rem;   
-    margin: 2rem;
+    margin-left: 12%;
 }
 .potfolio-box{
     position: relative;
