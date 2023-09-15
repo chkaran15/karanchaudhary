@@ -1,0 +1,52 @@
+PROFILE
+Hi, I am Karan Chaudhary. I am a front-end developer. I am highly motivated and willing to learn new technologies and execute as per the requirement. Good Communication Skills with good leadership skills, and the ability to manage and solve the problem.
+
+CONTACT
+PHONE:
++9779866575446	
+
+EMAIL:
+karandk536@gmail.com
+
+HOBBIES
+Traveling
+Reading
+Exploring Things
+
+KARAN CHAUDHRY
+WEB APP DEVELOPER
+
+EDUCATION
+The British College (Kathmandu)
+2021 - Present
+BSc (Hons) Computing. 
+
+(+2) Management, New Horizon College (Butwal)
+2018 - 2021 
+I had a major in Computer Science. Accounting, Economics, English, Math, etc. are the subjects I studied during my 12th (HSEB). 
+
+PROJECTS
+
+Portfolio: 
+https://potfoliowebsite-84350.web.app/
+I worked with the technologies like HTML, CSS, and JavaScript to build this portfolio website.
+
+FilmFlex: (fullstack webApp) Fully Responsive
+https://filmflex-ce893.web.app/
+I worked with the technologies like ReactJS, Material-UI, React-Router, Axios, firebase auth, CSS, etc. to build this website. 
+
+Draz Clone : FrontEnd 
+https://github.com/Karan21-cyber/daraz-clone
+I worked with the technologies like ReactJS, Material-UI, React-Router, Axios, etc. to build this website. 
+
+Web app project
+https://77297911.tbcstudentserver.com/watindex.html
+I worked with the technologies HTML, CSS, PHP etc. to build this website. 
+ 
+SKILLS
+1. HTML
+2. CSS
+3. React
+4. PHP
+5. JAVA
+
