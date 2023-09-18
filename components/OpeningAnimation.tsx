@@ -17,7 +17,7 @@ const itemVariants = {
 function OpeningAnimation() {
   return (
     <main className="h-screen bg-black overflow-hidden">
-      <div className="flex h-[90vh]  justify-center items-center ">
+      <div className="flex flex-col md:flex-row h-[90vh]  justify-center items-center ">
         <div>
           <motion.div
             className=" w-[200px] h-[200px] bg-[#fafafa] rounded-[50%] overflow-hidden z-10"
