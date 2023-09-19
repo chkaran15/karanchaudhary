@@ -1,9 +1,11 @@
-import OpeningAnimation from "@/components/OpeningAnimation";
+import React from "react";
 
 export default function Home() {
+ 
+
   return (
     <main className="w-full">
-      <OpeningAnimation />
+      This is from home page
     </main>
   );
 }

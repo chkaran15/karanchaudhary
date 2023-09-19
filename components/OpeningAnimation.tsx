@@ -2,21 +2,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
-import LinkComponent from "./LinkComponent";
+import LinkComponent from "../common/LinkComponent";
 
 // bg-[#9900ff]
 
 const visible = { opacity: 1, x: 0, transition: { duration: 2 } };
 
-const itemVariants = {
-  hidden: { opacity: 0, x: 10 },
-  visible,
-};
-
 function OpeningAnimation() {
   return (
-    <main className="h-screen bg-black overflow-hidden">
+    <section className="h-screen bg-black overflow-hidden">
       <div className="flex flex-col md:flex-row h-[90vh]  justify-center items-center ">
         <div>
           <motion.div
@@ -85,12 +79,12 @@ function OpeningAnimation() {
           </motion.article>
         </div>
       </div>
-      <LinkComponent
+      {/* <LinkComponent
         href="/home"
         linkname="Click here to go"
         className="text-[#9900ff] underline text-xl font-semibold mb-3 flex justify-center"
-      />
-    </main>
+      /> */}
+    </section>
   );
 }
 

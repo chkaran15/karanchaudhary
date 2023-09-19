@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import React from 'react'
 
-
 interface LinkType{
     href:string,
     linkname:string,
     className:string,
     target?:string,
 }
+
 function LinkComponent({href,linkname,className,target}:LinkType) {
   return (
     <Link
