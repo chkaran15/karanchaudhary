@@ -30,7 +30,7 @@ function OpeningAnimation() {
               width={200}
               height={200}
               alt="logo"
-              src={"/favicon/karanpng.png"}
+              src={"/karan.png"}
               className="rounded-[50%]"
             />
           </motion.div>
