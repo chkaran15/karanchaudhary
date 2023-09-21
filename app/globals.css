@@ -2,3 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
+/* body{
+    background-color: black;
+    scroll-behavior: smooth;
+} */
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+   background: white;
+}
+
+::-webkit-scrollbar-thumb{
+    background: rgb(64, 182, 214);
+    border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: gray;
+}
+
+
+.animate-top-nav {
+    animation: top_nav 1s ease-in;
+}
+
+@keyframes top_nav {
+    0% {
+        transform: translateY(-110%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+
+    50% {
+        transform: translateY(0%);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+.animate-down-nav{
+    animation: down_nav 1s ease-in;
+    
+}
+        
+@keyframes down_nav {
+    0% {
+        transform: translateY(0%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+        
+    50% {
+         transform: translateY(-110%);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}

@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import OpeningAnimation from "./OpeningAnimation";
+import NavBar from "./NavBar";
+import NavbarComponent from "./NavbarComponent";
 
 function Provider({ children }: { children: React.ReactNode }) {
   const [isSection1Loaded, setIsSection1Loaded] = useState(false);
@@ -13,14 +15,19 @@ function Provider({ children }: { children: React.ReactNode }) {
 
     // You can replace the setTimeout above with your actual loading logic.
   }, []);
+
+
+
   return (
     <>
       {isSection1Loaded ? (
         <>
-          <h1>navbar</h1>
+          
+          <NavbarComponent />
+
           {children}
           <h1>footer</h1>
-        </>
+       </>
       ) : (
         <OpeningAnimation />
       )}
