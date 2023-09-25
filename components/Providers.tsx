@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import OpeningAnimation from "./OpeningAnimation";
 import NavBar from "./NavBar";
 import NavbarComponent from "./NavbarComponent";
+import { RecoilRoot } from "recoil";
 
 function Provider({ children }: { children: React.ReactNode }) {
   const [isSection1Loaded, setIsSection1Loaded] = useState(false);
@@ -19,7 +20,7 @@ function Provider({ children }: { children: React.ReactNode }) {
 
 
   return (
-    <>
+    <RecoilRoot>
       {isSection1Loaded ? (
         <>
           
@@ -31,7 +32,7 @@ function Provider({ children }: { children: React.ReactNode }) {
       ) : (
         <OpeningAnimation />
       )}
-    </>
+    </RecoilRoot>
   );
 }
 
