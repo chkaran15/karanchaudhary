@@ -4,7 +4,7 @@ export default function Home() {
  
 
   return (
-    <main className="w-full bg-green-500 ">
+    <main className="w-full bg-green-500 pt-16">
       <h1 className="text-7xl font-extrabold">This is from home page</h1>
       <h1 className="text-7xl font-extrabold">This is from home page</h1>
       <h1 className="text-7xl font-extrabold">This is from home page</h1>{" "}

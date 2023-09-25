@@ -22,13 +22,11 @@ function Provider({ children }: { children: React.ReactNode }) {
   return (
     <RecoilRoot>
       {isSection1Loaded ? (
-        <>
-          
+        <> 
           <NavbarComponent />
-
           {children}
           <h1>footer</h1>
-       </>
+        </>
       ) : (
         <OpeningAnimation />
       )}

@@ -56,7 +56,6 @@ function NavBar() {
     return () => clearInterval(intervalID);
   }, []); // Empty dependency array means this effect runs only once on component mount
 
-
   // const [isOpen, toggleOpen] = useCycle(false, true);
 
   const containerRef = useRef(null);
@@ -64,21 +63,16 @@ function NavBar() {
 
   return (
     <nav
-      className={`navbar-wrapper flex items-center justify-between  px-10 bg-white text-black bg-opacity-70 py-2`}
+      className={`navbar-wrapper flex items-center justify-between px-3 lg:px-10 bg-white text-black bg-opacity-70 py-2`}
     >
       <Logo />
-      <div className=" w-[30%] flex justify-between items-center">
-        <h1 className="text-lightgray font-semibold">
+      <div
+        className={` flex lg:w-[35%] xl:w-[28%] justify-between items-center`}
+      >
+        <h1 className={`hidden lg:block text-lightgray font-semibold`}>
           Nepal, Kathmandu <span className="text-black">{dateTime}</span>{" "}
           {meridiem}
         </h1>
-
-        {/* <div className="menu-wrapper flex items-center gap-2">
-          <h1 className="menu-text  text-normal ">Menu</h1>
-          <div onClick={handleShowMenu} className="menu-icon w-[30px] h-[30px] rounded-full flex justify-center items-center border border-black cursor-pointer hover:bg-lightblue">
-            <LuLayoutDashboard  />
-          </div>
-        </div> */}
 
         <div className="menu-wrapper flex items-center gap-2">
           <h1 className="menu-text  text-normal ">Menu</h1>
@@ -94,24 +88,12 @@ function NavBar() {
             <div
               className={`${
                 isOpen ? "block" : "hidden"
-              } absolute w-[480px] h-[600px] bg-white right-4 top-4 rounded-xl `}
+              } absolute w-full h-screen md:w-[480px]  md:h-[600px] bg-white right-0 top-0 md:right-4 md:top-1 md:rounded-xl `}
             >
               <Navigation dateTime={dateTime} meridiem={meridiem} />
             </div>
           </motion.nav>
         </div>
-
-        {/* <motion.nav
-          initial={false}
-          animate={isOpen ? "open" : "closed"}
-          // custom={height}
-          ref={containerRef}
-        >
-          <h1 className="menu-text  text-normal ">Menu</h1>
-          <motion.div className="background" variants={sidebar} />
-          <Navigation />
-          <MenuToggle toggle={() => toggleOpen()} />
-        </motion.nav> */}
       </div>
     </nav>
   );

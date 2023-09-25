@@ -27,7 +27,7 @@ export default function Navigation({dateTime,meridiem}:NavDropDownProps) {
     return (
 <div className="flex flex-col py-4 px-4 gap-4">
     <div className="flex justify-between items-center">
-      <h1 className="text-lightgray font-semibold">
+      <h1 className="text-xs md:text-base text-lightgray font-semibold">
         Nepal, Kathmandu <span className="text-black">{dateTime}</span>{" "}
         {meridiem}
       </h1>
