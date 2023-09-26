@@ -38,9 +38,9 @@ export const MenuItem = ({ data, index }: { data: any; index: number }) => {
           <div className="top-arrow">
             <BsArrowUpRight size={30} />
           </div>
-          <div className="down-arrow absolute  -left-7  ">
+          {/* <div className="down-arrow absolute  -left-7  ">
             <BsArrowUpRight size={30} />
-          </div>
+          </div> */}
         </div>
       </div>
     </motion.li>

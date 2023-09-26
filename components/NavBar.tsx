@@ -5,7 +5,7 @@ import Logo from "./Logo";
 import { navMenuState } from "@/atoms/navAtoms";
 import { useRecoilState } from "recoil";
 import { useRef } from "react";
-import { motion, useCycle } from "framer-motion";
+import { AnimatePresence, motion, useCycle, usePresence } from "framer-motion";
 import { MenuToggle } from "./Home/Navbar/MenuToggle";
 import { useDimensions } from "./Home/Navbar/use-dimensions";
 import Navigation from "./Home/Navbar/Navigation";
@@ -31,6 +31,7 @@ const sidebar = {
 };
 
 function NavBar() {
+ 
   const [dateTime, setDateTime] = useState<string>(new Date().toLocaleString());
   const [meridiem, setMeridiem] = useState<string>("");
   const [isOpen, setOpen] = useRecoilState<boolean>(navMenuState);
@@ -63,7 +64,7 @@ function NavBar() {
 
   return (
     <nav
-      className={`navbar-wrapper flex items-center justify-between px-3 lg:px-10 bg-white text-black bg-opacity-70 py-2`}
+      className={`navbar-wrapper flex items-center justify-between px-3 lg:px-8 bg-white text-black bg-opacity-70 py-2`}
     >
       <Logo />
       <div
@@ -76,21 +77,24 @@ function NavBar() {
 
         <div className="menu-wrapper flex items-center gap-2">
           <h1 className="menu-text  text-normal ">Menu</h1>
-          <motion.nav
+          {/* <motion.nav
             initial={false}
             animate={isOpen ? "open" : "closed"}
             custom={height}
             ref={containerRef}
-          >
-              <MenuToggle toggle={() => setOpen(true)} />
-            <div
-              className={`${
-                isOpen ? "block" : "hidden"
-              } absolute w-full h-screen md:w-[480px]  md:h-[600px] bg-white right-0 top-0 md:right-4 md:top-1 md:rounded-xl `}
-            >
-              <Navigation dateTime={dateTime} meridiem={meridiem} />
-            </div>
-          </motion.nav>
+          > */}
+            <MenuToggle toggle={() => setOpen(true)} />
+          {/* </motion.nav> */}
+          <AnimatePresence>
+            {isOpen ? (
+              // <div
+              //   ref={menuRef}
+              //   className={`absolute w-full h-screen md:w-[480px]  md:h-[600px] bg-white right-0 top-0 md:right-4 md:top-1 md:rounded-xl `}
+              // >
+                <Navigation dateTime={dateTime} meridiem={meridiem} />
+              
+            ) : null}
+          </AnimatePresence>
         </div>
       </div>
     </nav>
