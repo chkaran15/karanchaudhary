@@ -82,9 +82,7 @@ function NavBar() {
             custom={height}
             ref={containerRef}
           >
-            <div className="menu-icon w-[30px] h-[30px] rounded-full flex justify-center items-center border border-black cursor-pointer hover:bg-lightblue">
               <MenuToggle toggle={() => setOpen(true)} />
-            </div>
             <div
               className={`${
                 isOpen ? "block" : "hidden"

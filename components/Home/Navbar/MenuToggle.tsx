@@ -40,12 +40,17 @@ export const MenuToggle: React.FC<MenuToggleProps> = ({ toggle }) => {
   const [isOpen, setOpen] = useRecoilState<boolean>(navMenuState);
 
   return (
-    <button onClick={toggle}>
-      {isOpen === false ? (
-        <LuLayoutDashboard size="1.1rem" color="hsl(0, 0%, 18%)" />
-      ) : (
-        <GrClose size="1.1rem" color="hsl(0, 0%, 18%)" />
-      )}
-    </button>
+    <div
+      onClick={toggle}
+      className="menu-icon w-[30px] h-[30px] rounded-full flex justify-center items-center border border-black cursor-pointer hover:bg-lightblue"
+    >
+      <button>
+        {isOpen === false ? (
+          <LuLayoutDashboard size="1.1rem" color="hsl(0, 0%, 18%)" />
+        ) : (
+          <GrClose size="1.1rem" color="hsl(0, 0%, 18%)" />
+        )}
+      </button>
+    </div>
   );
 };

@@ -1,0 +1,30 @@
+export const sociallinks = [
+    {
+        id:1,
+        url:"/projects",
+        name:"github",
+        color:"#D309E1",
+    },
+    {
+        id:2,
+        url:"/expertise",
+        name:"twitter",
+        color:"#9C1AFF",
+
+    },{
+        id:3,
+        url:"/about",
+        name:"instagram",
+        color:"#7700FF",
+    },{
+        id:4,
+        url:"/blog",
+        name:"linkedin",
+        color:"#4400FF",
+    },{
+        id:5,
+        url:"/contact",
+        name:"facebook",
+        color:"#4a40c9",
+    },
+]

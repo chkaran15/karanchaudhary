@@ -17,8 +17,6 @@ function Provider({ children }: { children: React.ReactNode }) {
     // You can replace the setTimeout above with your actual loading logic.
   }, []);
 
-
-
   return (
     <RecoilRoot>
       {isSection1Loaded ? (

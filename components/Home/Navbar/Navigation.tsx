@@ -4,7 +4,10 @@ import { MenuItem } from "./MenuItem";
 import { MenuToggle } from "./MenuToggle";
 import { navMenuState } from "@/atoms/navAtoms";
 import { useRecoilState } from "recoil";
-
+import { navlinks } from "@/data/navlinks";
+import { sociallinks } from "@/data/sociallinks";
+import { SocialItems } from "./SocialItems";
+import { BsArrowUpRight } from "react-icons/bs";
 
 const variants = {
   open: {
@@ -18,35 +21,48 @@ const variants = {
 interface NavDropDownProps {
   dateTime: string;
   meridiem: string;
-
 }
 
-export default function Navigation({dateTime,meridiem}:NavDropDownProps) {
-      const [isOpen, setOpen] = useRecoilState<boolean>(navMenuState);
+export default function Navigation({ dateTime, meridiem }: NavDropDownProps) {
+  const [isOpen, setOpen] = useRecoilState<boolean>(navMenuState);
 
-    return (
-<div className="flex flex-col py-4 px-4 gap-4">
-    <div className="flex justify-between items-center">
-      <h1 className="text-xs md:text-base text-lightgray font-semibold">
-        Nepal, Kathmandu <span className="text-black">{dateTime}</span>{" "}
-        {meridiem}
-      </h1>
+  return (
+    <div className="flex flex-col h-full py-4 px-4 gap-4 ">
+      <div className="flex justify-between items-center">
+        <h1 className="text-xs md:text-base text-lightgray font-semibold">
+          Nepal, Kathmandu <span className="text-black">{dateTime}</span>{" "}
+          {meridiem}
+        </h1>
 
-      <div className="menu-wrapper flex items-center gap-2">
-        <h1 className="menu-text  text-normal ">Menu</h1>
-        <div className="menu-icon w-[30px] h-[30px] rounded-full flex justify-center items-center border border-black cursor-pointer hover:bg-lightblue">
-          <MenuToggle toggle={() => setOpen(false)} />
+        <div className="menu-wrapper flex items-center gap-2">
+          <h1 className="menu-text  text-normal ">Menu</h1>
+          <div className="menu-icon w-[30px] h-[30px] rounded-full flex justify-center items-center border border-black cursor-pointer hover:bg-lightblue">
+            <MenuToggle toggle={() => setOpen(false)} />
+          </div>
+        </div>
+      </div>
+
+      <div className="relative h-full  flex gap-4 justify-between">
+        <motion.ul variants={variants} className="flex flex-col gap-4">
+          {navlinks?.map((data, index) => (
+            <MenuItem data={data} key={data?.id} index={index} />
+          ))}
+        </motion.ul>
+        <div className="absolute left-2 bottom-2 flex gap-4 items-center cursor-pointer hover:text-lightblue">
+          <h1>tharukaran930@gmail.com</h1>
+          <div className="arrow-icon"><BsArrowUpRight size={17} /></div>
+        </div>
+
+        <div className=" absolute right-2 bottom-1 flex flex-col gap-4">
+          <motion.ul variants={variants} className="flex flex-col gap-6">
+            {sociallinks?.map((data, index) => (
+              <SocialItems data={data} key={index} />
+            ))}
+          </motion.ul>
         </div>
       </div>
     </div>
-
-    <motion.ul variants={variants} className="flex flex-col gap-6">
-      {itemIds.map((i) => (
-        <MenuItem i={i} key={i} />
-      ))}
-    </motion.ul>
-  </div>
-    )
+  );
 }
 
-const itemIds = [0, 1, 2, 3, 4];
+const itemIds = ["Home", "Projects", "Expertise", "About", "Feed", "Contact"];

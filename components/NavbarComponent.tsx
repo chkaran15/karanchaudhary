@@ -12,7 +12,6 @@ function NavbarComponent() {
 
   const controlNavbar = () => {
     const currentScrollY = window.scrollY;
-
     if (currentScrollY <= 100) {
       setShow(true);
     } else if (currentScrollY > lastScrollY) {
@@ -20,16 +19,28 @@ function NavbarComponent() {
     } else {
       setShow(true);
     }
-
     lastScrollY = currentScrollY;
   };
 
+  // hide and show navbar when scroll
   useEffect(() => {
     window.addEventListener("scroll", controlNavbar);
     return () => {
       window.removeEventListener("scroll", controlNavbar);
     };
   }, []);
+
+  // close menu when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, [isOpen]);
 
   useEffect(() => {
     if (isOpen) {

@@ -1,0 +1,36 @@
+export const navlinks = [
+    {
+        id:1,
+        url:"/",
+        name:"Home",
+        color:"#FF008C",
+    },
+    {
+        id:2,
+        url:"/projects",
+        name:"Projects",
+        color:"#D309E1",
+    },
+    {
+        id:3,
+        url:"/expertise",
+        name:"Expertise",
+        color:"#9C1AFF",
+
+    },{
+        id:4,
+        url:"/about",
+        name:"About",
+        color:"#7700FF",
+    },{
+        id:5,
+        url:"/blog",
+        name:"Blog",
+        color:"#4400FF",
+    },{
+        id:6,
+        url:"/contact",
+        name:"Contact",
+        color:"#4a40c9",
+    },
+]
