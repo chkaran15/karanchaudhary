@@ -28,6 +28,7 @@ export default function Home() {
                 alt="karan"
                 width={90}
                 height={90}
+                loading="lazy"
               />
             </Link>
           </div>

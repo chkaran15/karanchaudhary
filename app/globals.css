@@ -8,10 +8,11 @@
 } */
 
 ::-webkit-scrollbar{
-    width: 10px;
+    /* width: 10px; */
+    display: none;
 }
 
-::-webkit-scrollbar-track{
+/* ::-webkit-scrollbar-track{
    background: white;
 }
 
@@ -20,10 +21,9 @@
     border-radius: 20px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: gray;
-}
+} */
 
 
 .animate-top-nav {
