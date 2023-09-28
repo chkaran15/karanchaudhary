@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import OpeningAnimation from "./OpeningAnimation";
-import NavBar from "./NavBar";
 import NavbarComponent from "./NavbarComponent";
 import { RecoilRoot } from "recoil";
+import ParticlesComponent from "./Particles/Particles";
 
 function Provider({ children }: { children: React.ReactNode }) {
   const [isSection1Loaded, setIsSection1Loaded] = useState(false);
@@ -20,7 +20,8 @@ function Provider({ children }: { children: React.ReactNode }) {
   return (
     <RecoilRoot>
       {isSection1Loaded ? (
-        <> 
+        <>
+          <ParticlesComponent id="tsparticles" />
           <NavbarComponent />
           {children}
           <h1>footer</h1>

@@ -51,10 +51,10 @@ function NavbarComponent() {
   });
 
   return (
-    <div className="w-full fixed">
+    <div className="w-full fixed z-[99]">
       <div
         ref={navRef}
-        className={`absolute z-10 w-full origin-top mb-10 transform ${
+        className={`absolute  w-full origin-top mb-10 transform ${
           show
             ? "block animate-top-nav transition ease-in duration-700 delay-700"
             : "animate-down-nav hidden"

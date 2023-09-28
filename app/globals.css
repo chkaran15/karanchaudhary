@@ -58,3 +58,8 @@
         animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
     }
 }
+
+#tsparticles > canvas{
+    z-index: -9 !important;
+    background: transparent !important;
+}

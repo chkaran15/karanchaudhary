@@ -20,6 +20,7 @@ const variants = {
 };
 
 export const MenuItem = ({ data, index }: { data: any; index: number }) => {
+  
   return (
     <motion.li
       variants={variants}
@@ -27,7 +28,7 @@ export const MenuItem = ({ data, index }: { data: any; index: number }) => {
       whileTap={{ scale: 0.95 }}
     >
       <div
-        className={`icon-placeholder w-[220px] h-[50px] flex justify-between items-center cursor-pointer `}
+        className={`icon-placeholder w-[150px]  md:w-[220px] h-[30px] md:h-[50px] flex justify-between items-center cursor-pointer `}
         style={{ color: data?.color }}
       >
         <h1 className={`text-lg md:text-[27px] lg:text-[37px] cursor-pointer `}>
@@ -36,7 +37,7 @@ export const MenuItem = ({ data, index }: { data: any; index: number }) => {
 
         <div className="relative arrow-icon">
           <div className="top-arrow">
-            <BsArrowUpRight size={30} />
+            <BsArrowUpRight size={25} />
           </div>
           {/* <div className="down-arrow absolute  -left-7  ">
             <BsArrowUpRight size={30} />

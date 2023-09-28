@@ -41,7 +41,7 @@ export default function Navigation({ dateTime, meridiem }: NavDropDownProps) {
   return (
     <div
       ref={menuRef}
-      className={`absolute w-full h-screen md:w-[480px]  md:h-[600px] bg-white right-0 top-0 md:right-4 md:top-1 md:rounded-xl `}
+      className={`absolute w-full  origin-top h-screen md:w-[480px]  md:h-[600px] bg-white right-0 top-0 md:right-4 md:top-1 md:rounded-xl `}
     >
       <div className="flex flex-col h-full py-3 px-4 gap-4 ">
         <div className="flex justify-between items-center">
@@ -64,15 +64,15 @@ export default function Navigation({ dateTime, meridiem }: NavDropDownProps) {
               <MenuItem data={data} key={data?.id} index={index} />
             ))}
           </motion.ul>
-          <div className="absolute left-2 bottom-2 flex gap-4 items-center cursor-pointer hover:text-lightblue">
-            <h1>tharukaran930@gmail.com</h1>
-            <div className="arrow-icon">
-              <BsArrowUpRight size={17} />
+          <div className="absolute left-2 bottom-2 flex gap-2 md:gap-4 items-center cursor-pointer hover:text-lightblue">
+            <h1 className="text-xs md:text-base">tharukaran930@gmail.com</h1>
+            <div className="arrow-icon hidden md:block">
+              <BsArrowUpRight size={15} />
             </div>
           </div>
 
           <div className=" absolute right-2 bottom-1 flex flex-col gap-4">
-            <motion.ul variants={variants} className="flex flex-col gap-6">
+            <motion.ul variants={variants} className="flex flex-col gap-3 md:gap-6">
               {sociallinks?.map((data, index) => (
                 <SocialItems data={data} key={index} />
               ))}
