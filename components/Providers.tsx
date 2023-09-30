@@ -6,7 +6,7 @@ import { RecoilRoot } from "recoil";
 import ParticlesComponent from "./Particles/Particles";
 
 function Provider({ children }: { children: React.ReactNode }) {
-  const [isSection1Loaded, setIsSection1Loaded] = useState(true);
+  const [isSection1Loaded, setIsSection1Loaded] = useState(false);
 
   useEffect(() => {
     // Simulate loading of section1

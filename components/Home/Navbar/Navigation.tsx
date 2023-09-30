@@ -38,6 +38,7 @@ export default function Navigation({ dateTime, meridiem }: NavDropDownProps) {
     }
   }, [isPresent, safeToRemove]);
 
+
   return (
     <div
       ref={menuRef}
@@ -61,7 +62,12 @@ export default function Navigation({ dateTime, meridiem }: NavDropDownProps) {
         <div className="relative h-full  flex gap-4 justify-between">
           <motion.ul variants={variants} className="flex flex-col gap-4">
             {navlinks?.map((data, index) => (
-              <MenuItem data={data} key={data?.id} index={index} />
+              <MenuItem
+                data={data}
+                key={data?.id}
+                index={index}
+                toggle={() => setOpen(false)}
+              />
             ))}
           </motion.ul>
           <div className="absolute left-2 bottom-2 flex gap-2 md:gap-4 items-center cursor-pointer hover:text-lightblue">
@@ -72,9 +78,16 @@ export default function Navigation({ dateTime, meridiem }: NavDropDownProps) {
           </div>
 
           <div className=" absolute right-2 bottom-1 flex flex-col gap-4">
-            <motion.ul variants={variants} className="flex flex-col gap-3 md:gap-6">
+            <motion.ul
+              variants={variants}
+              className="flex flex-col gap-3 md:gap-6"
+            >
               {sociallinks?.map((data, index) => (
-                <SocialItems data={data} key={index} />
+                <SocialItems
+                  data={data}
+                  key={index}
+                  toggle={() => setOpen(false)}
+                />
               ))}
             </motion.ul>
           </div>

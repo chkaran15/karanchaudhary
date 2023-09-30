@@ -31,7 +31,6 @@ const sidebar = {
 };
 
 function NavBar() {
- 
   const [dateTime, setDateTime] = useState<string>(new Date().toLocaleString());
   const [meridiem, setMeridiem] = useState<string>("");
   const [isOpen, setOpen] = useRecoilState<boolean>(navMenuState);
@@ -64,14 +63,14 @@ function NavBar() {
 
   return (
     <nav
-      className={`navbar-wrapper flex items-center justify-between px-3 lg:px-8 bg-white text-black bg-opacity-70 py-2`}
+      className={`navbar-wrapper flex items-center justify-between px-3 lg:px-8 shadow-lg bg-opacity-90 py-2 text-white`}
     >
       <Logo />
       <div
         className={` flex lg:w-[35%] xl:w-[28%] justify-between items-center`}
       >
-        <h1 className={`hidden lg:block text-lightgray font-semibold`}>
-          Nepal, Kathmandu <span className="text-black">{dateTime}</span>{" "}
+        <h1 className={`hidden lg:block  font-semibold`}>
+          Nepal, Kathmandu <span className="text-gray-400">{dateTime}</span>{" "}
           {meridiem}
         </h1>
 
@@ -83,7 +82,7 @@ function NavBar() {
             custom={height}
             ref={containerRef}
           > */}
-            <MenuToggle toggle={() => setOpen(true)} />
+          <MenuToggle toggle={() => setOpen(true)} />
           {/* </motion.nav> */}
           <AnimatePresence>
             {isOpen ? (
@@ -91,8 +90,7 @@ function NavBar() {
               //   ref={menuRef}
               //   className={`absolute w-full h-screen md:w-[480px]  md:h-[600px] bg-white right-0 top-0 md:right-4 md:top-1 md:rounded-xl `}
               // >
-                <Navigation dateTime={dateTime} meridiem={meridiem} />
-              
+              <Navigation dateTime={dateTime} meridiem={meridiem} />
             ) : null}
           </AnimatePresence>
         </div>

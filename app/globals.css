@@ -63,3 +63,43 @@
     z-index: -9 !important;
     background: transparent !important;
 }
+
+
+/* animation for text */
+@keyframes slideInFromTop {
+    from {
+        top: -60%;
+    }
+    to {
+        top: 10%;
+    }
+}
+
+.home-title-wrapper {
+    /* other styles */
+transition: 1.5s ease-in;
+    /* Set initial position */
+    top: -50%;
+  /* Apply animation */
+    animation: slideInFromTop 1s ease-in 1s forwards;
+}
+
+@keyframes slideInFromButtom {
+    from {
+        bottom:-60%;
+    }
+
+    to {
+        bottom:2%;
+    }
+}
+
+.home-subtitle{
+    /* other styles */
+    transition: 2s ease-in;
+    /* Set initial position */
+    bottom: -60%;
+    right:2%;
+    /* Apply animation */
+    animation: slideInFromButtom 1.5s ease-in 1.5s forwards;
+}

@@ -22,7 +22,7 @@ const Path: React.FC<PathProps> = ({
   <motion.path
     fill="transparent"
     strokeWidth="3"
-    stroke="hsl(0, 0%, 18%)"
+    stroke="black"
     strokeLinecap="round"
     d={d}
     variants={variants}
@@ -42,13 +42,13 @@ export const MenuToggle: React.FC<MenuToggleProps> = ({ toggle }) => {
   return (
     <div
       onClick={toggle}
-      className="menu-icon w-[30px] h-[30px] rounded-full flex justify-center items-center border border-black cursor-pointer hover:bg-lightblue"
+      className="menu-icon w-[30px] h-[30px] rounded-full flex justify-center items-center border border-white cursor-pointer hover:bg-lightblue hover:border-0"
     >
       <button>
         {isOpen === false ? (
-          <LuLayoutDashboard size="1.1rem" color="hsl(0, 0%, 18%)" />
+          <LuLayoutDashboard size="1.1rem" color="white" />
         ) : (
-          <GrClose size="1.1rem" color="hsl(0, 0%, 18%)" />
+          <GrClose size="1.1rem" color="gray" />
         )}
       </button>
     </div>

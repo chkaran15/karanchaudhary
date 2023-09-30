@@ -11,8 +11,8 @@ const ImageSection = () => {
   });
 
   return (
-    <section className="image-section-wrapper relative">
-      <motion.div className="home-image-wrapper w-full h-[50vh] md:h-screen"
+    <div className="image-section-wrapper relative">
+      <motion.div className="home-image-wrapper w-full h-[40vh] md:h-screen"
       style={{scale:scaleImage}}
       >
         <Image
@@ -23,7 +23,7 @@ const ImageSection = () => {
           loading="lazy"
         />
       </motion.div>
-    </section>
+    </div>
   );
 };
 

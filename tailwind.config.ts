@@ -17,6 +17,7 @@ const config: Config = {
         lightblue:"#5891ed",
         darkgray:"#4a4d52",
         lightgray:"rgba(0,0,0,.5)",
+        primary1:"#1f1c3d",
       }
     },
   },

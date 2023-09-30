@@ -1,29 +1,29 @@
 export const sociallinks = [
     {
         id:1,
-        url:"/projects",
+        url:"https://github.com/Karan21-cyber",
         name:"github",
         color:"#D309E1",
     },
     {
         id:2,
-        url:"/expertise",
+        url:"https://twitter.com/",
         name:"twitter",
         color:"#9C1AFF",
 
     },{
         id:3,
-        url:"/about",
+        url:"https://www.instagram.com/ka_ran715/",
         name:"instagram",
         color:"#7700FF",
     },{
         id:4,
-        url:"/blog",
+        url:"https://www.linkedin.com/in/karan-chaudhary-63a153202/",
         name:"linkedin",
         color:"#4400FF",
     },{
         id:5,
-        url:"/contact",
+        url:"https://www.facebook.com/karan.tharu.7165",
         name:"facebook",
         color:"#4a40c9",
     },
