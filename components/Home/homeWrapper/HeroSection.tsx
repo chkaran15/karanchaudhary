@@ -20,7 +20,7 @@ const HeroSection = () => {
             Full Stack <span className="text-gray-400">Developer :</span> Karan{" "}
             <span className="text-gray-400">Chaudhary</span>
           </h1>
-          <Link href="/about">
+          <Link href="/aboutme">
             <Image
               className="home-image rounded-full hover:opacity-50 hover:scale-90"
               src="/profile/profile.jpg"

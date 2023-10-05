@@ -69,7 +69,7 @@ function NavBar() {
         className={`flex lg:w-[35%] xl:w-[25%] justify-between items-center`}
       >
         <h1 className={`hidden lg:block  font-semibold text-white`}>
-          Nepal, Kathmandu <span className="text-blue-400">{dateTime}</span>{" "}
+          Nepal, Kathmandu <span className="text-slate-800">{dateTime}</span>{" "}
           {meridiem}
         </h1>
 
