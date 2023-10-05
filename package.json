@@ -9,11 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-<<<<<<< HEAD
-=======
     "@cloudinary/react": "^1.11.2",
     "@cloudinary/url-gen": "^1.11.2",
->>>>>>> code
     "@react-three/fiber": "^8.14.3",
     "@types/node": "20.6.2",
     "@types/react": "18.2.22",
