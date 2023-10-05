@@ -20,15 +20,15 @@ export const ScrollSpin = () => {
   return (
     <div className="fixed top-[85%] left-[2%]">
       <motion.div
-        className="sticky  w-[100px] h-[100px] border rounded-full"
+        className="sticky  w-[100px] h-[100px] rounded-full"
         animate={{ rotate: deg }}
       >
         {/* <Link href="/" className="w-full h-full"></Link> */}
-        <div className="relative w-full h-full bg-slate-500 rounded-full">
+        <div className="relative w-full h-full  rounded-full">
           {spinText.split("").map((item, i) => (
             <span
               key={i}
-              className=" absolute w-full h-full capitalize text-center text-sm"
+              className="absolute w-full h-full shadow-md capitalize text-center text-sm"
               style={{
                 transform: `rotate(${i * 8}deg)`,
                 color: item === "*" ? "white" : "purple",
