@@ -77,7 +77,7 @@
 
 .home-title-wrapper {
     /* other styles */
-transition: 1.5s ease-in;
+transition: 1s ease-in;
     /* Set initial position */
     top: -50%;
   /* Apply animation */
@@ -96,10 +96,10 @@ transition: 1.5s ease-in;
 
 .home-subtitle{
     /* other styles */
-    transition: 2s ease-in;
+    transition: 1.5s ease-in;
     /* Set initial position */
     bottom: -60%;
     right:2%;
     /* Apply animation */
-    animation: slideInFromButtom 1.5s ease-in 1.5s forwards;
+    animation: slideInFromButtom 1s ease-in 1s forwards;
 }

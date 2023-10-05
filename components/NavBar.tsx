@@ -1,5 +1,6 @@
 "use client";
-
+import { HiOutlineMenuAlt4 } from "react-icons/hi";
+import { AiOutlineClose } from "react-icons/ai";
 import React, { useEffect, useState } from "react";
 import Logo from "./Logo";
 import { navMenuState } from "@/atoms/navAtoms";
@@ -33,7 +34,7 @@ const sidebar = {
 function NavBar() {
   const [dateTime, setDateTime] = useState<string>(new Date().toLocaleString());
   const [meridiem, setMeridiem] = useState<string>("");
-  const [isOpen, setOpen] = useRecoilState<boolean>(navMenuState);
+  const [isActive, setIsActive] = useRecoilState<boolean>(navMenuState);
 
   useEffect(() => {
     // Update the date and time every second
@@ -62,38 +63,56 @@ function NavBar() {
   const { height } = useDimensions(containerRef) || { height: 600 };
 
   return (
-    <nav
-      className={`navbar-wrapper flex items-center justify-between px-3 lg:px-8 shadow-lg bg-opacity-90 py-2 text-white`}
-    >
+    <nav className="navbar-wrapper px-4 md:px-10  shadow-2xl  py-[19px] flex justify-between items-center">
       <Logo />
       <div
-        className={` flex lg:w-[35%] xl:w-[28%] justify-between items-center`}
+        className={`flex lg:w-[35%] xl:w-[25%] justify-between items-center`}
       >
-        <h1 className={`hidden lg:block  font-semibold`}>
-          Nepal, Kathmandu <span className="text-gray-400">{dateTime}</span>{" "}
+        <h1 className={`hidden lg:block  font-semibold text-white`}>
+          Nepal, Kathmandu <span className="text-blue-400">{dateTime}</span>{" "}
           {meridiem}
         </h1>
 
-        <div className="menu-wrapper flex items-center gap-2">
-          <h1 className="menu-text  text-normal ">Menu</h1>
-          {/* <motion.nav
-            initial={false}
-            animate={isOpen ? "open" : "closed"}
-            custom={height}
-            ref={containerRef}
-          > */}
-          <MenuToggle toggle={() => setOpen(true)} />
-          {/* </motion.nav> */}
-          <AnimatePresence>
-            {isOpen ? (
-              // <div
-              //   ref={menuRef}
-              //   className={`absolute w-full h-screen md:w-[480px]  md:h-[600px] bg-white right-0 top-0 md:right-4 md:top-1 md:rounded-xl `}
-              // >
-              <Navigation dateTime={dateTime} meridiem={meridiem} />
-            ) : null}
-          </AnimatePresence>
-        </div>
+        <motion.div
+          onClick={() => setIsActive(!isActive)}
+          className="w-10 h-10 relative z-10 rounded-full bg-green-400 text-white flex justify-center items-center   text-xs cursor-pointer overflow-hidden"
+        >
+          <motion.div
+            transition={{ duration: 0.5 }}
+            className="bg-green-400 -z-10"
+            animate={{
+              position: "absolute",
+              width: isActive ? "100%" : "0%",
+              height: isActive ? "100%" : "0%",
+              borderRadius: "50%",
+              backgroundColor: isActive ? "red" : "green",
+            }}
+          ></motion.div>
+
+          {isActive ? (
+            <AiOutlineClose size={25} color={"white"} fontWeight={"bold"} />
+          ) : (
+            <HiOutlineMenuAlt4 size={25} />
+          )}
+        </motion.div>
+
+        <motion.div
+          transition={{ duration: isActive ? 1 : 0.5 }}
+          animate={{
+            width: isActive ? "430px" : "0px",
+            height: isActive ? "50vh" : "0px",
+            borderRadius: "20px",
+            display: "flex",
+            // backgroundColor: isActive ? "red" : "green",
+          }}
+          className={`nav-components ${
+            isActive ? "block  " : "hidden "
+          }  shadow-lg bg-white absolute top-0 right-0 md:top-6 md:right-10`}
+        >
+          {isActive ? (
+            <Navigation dateTime={dateTime} meridiem={meridiem} />
+          ) : null}
+        </motion.div>
       </div>
     </nav>
   );

@@ -38,7 +38,7 @@ export const MenuItem = ({
       <Link
         href={data?.url}
         onClick={toggle}
-        className={`icon-placeholder w-[150px]  md:w-[220px] h-[30px] md:h-[50px] flex justify-between items-center cursor-pointer `}
+        className={`icon-placeholder w-[150px]  md:w-[200px] h-[30px] md:h-[50px] flex justify-between items-center cursor-pointer `}
         style={{ color: data?.color }}
       >
         <h1 className={`text-lg md:text-[27px] lg:text-[37px] cursor-pointer `}>

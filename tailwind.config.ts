@@ -18,8 +18,13 @@ const config: Config = {
         darkgray:"#4a4d52",
         lightgray:"rgba(0,0,0,.5)",
         primary1:"#1f1c3d",
+      },
+      screens:{
+        xs:"375px",
+        sm:"400px"
       }
     },
+    
   },
   plugins: [],
 }
