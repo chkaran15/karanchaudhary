@@ -22,6 +22,17 @@ function BannerSection() {
         </video>
       </div>
       <VideoSection />
+
+      <div className="absolute top-[50%] translate-y-[-50%] right-16 hidden lg:block">
+        <div className="relative  w-[420px]  h-[800px] shadow-2xl rounded-lg overflow-hidden bg-transparent">
+          <Image src="/phone.png" fill alt="design" />
+          <iframe
+            src="http://localhost:3000/"
+            className="z-10 absolute w-full h-full "
+          />
+        </div>
+      </div>
+
       <motion.div
         transition={{ duration: 1, delay: 1 }}
         initial={{ y: "10%" }}
@@ -37,7 +48,7 @@ function BannerSection() {
           padding: "10px",
           opacity: 0.9,
         }}
-        className="sm:w-[400px] md:right-6 md:bottom-6"
+        className="sm:w-[400px] md:right-6 md:bottom-6 z-10"
         style={{
           y,
         }}

@@ -8,7 +8,7 @@ import { OpeningAnimation } from "./animation/OpeningAnimation";
 import { ScrollSpin } from "./animation/ScrollSpin";
 
 function Provider({ children }: { children: React.ReactNode }) {
-  const [isloadingAnimation, setIsLoadingAnimation] = useState<boolean>(true);
+  const [isloadingAnimation, setIsLoadingAnimation] = useState<boolean>(false);
 
   useEffect(() => {
     // Simulate loading of section1
