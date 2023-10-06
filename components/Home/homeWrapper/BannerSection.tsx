@@ -3,14 +3,13 @@ import { VideoSection } from "./BannerTextSection";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import Image from "next/image";
 import React, { useRef, useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 0.5], [-distance, distance]);
 }
 
 function BannerSection() {
-  const router = useRouter();
   const videoRef = useRef<any>(null);
   const { scrollYProgress } = useScroll({ target: videoRef });
   const y = useParallax(scrollYProgress, -400);
@@ -75,7 +74,7 @@ function BannerSection() {
             Full Stack <span className="text-gray-400">Developer :</span> Karan{" "}
             <span className="text-gray-400">Chaudhary</span>
           </h1>
-          <div onClick={() => router.push("/about")}>
+          <Link href="/about" >
             <Image
               className=" rounded-full hover:opacity-50 hover:scale-90"
               src="/profile/profile.jpg"
@@ -84,7 +83,7 @@ function BannerSection() {
               height={90}
               loading="lazy"
             />
-          </div>
+          </Link>
         </div>
         {/* </div> */}
       </motion.div>
