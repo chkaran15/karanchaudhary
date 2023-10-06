@@ -6,13 +6,13 @@ import Link from "next/link";
 import React, { useRef, useEffect, useState } from "react";
 
 function useParallax(value: MotionValue<number>, distance: number) {
-  return useTransform(value, [0, 1], [-distance, distance]);
+  return useTransform(value, [0, 0.5], [-distance, distance]);
 }
 
 function BannerSection() {
   const videoRef = useRef<any>(null);
   const { scrollYProgress } = useScroll({ target: videoRef });
-  const y = useParallax(scrollYProgress, -300);
+  const y = useParallax(scrollYProgress, -400);
 
   return (
     <section className="relative w-full h-screen ">
