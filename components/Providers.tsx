@@ -2,13 +2,13 @@
 import React, { useEffect, useState } from "react";
 import NavbarComponent from "./NavbarComponent";
 import { RecoilRoot } from "recoil";
-import ParticlesComponent from "./Particles/Particles";
+// import ParticlesComponent from "./Particles/Particles";
 import Footer from "./Footer/footer";
 import { OpeningAnimation } from "./animation/OpeningAnimation";
 import { ScrollSpin } from "./animation/ScrollSpin";
 
 function Provider({ children }: { children: React.ReactNode }) {
-  const [isloadingAnimation, setIsLoadingAnimation] = useState<boolean>(false);
+  const [isloadingAnimation, setIsLoadingAnimation] = useState<boolean>(true);
 
   useEffect(() => {
     // Simulate loading of section1
@@ -23,7 +23,7 @@ function Provider({ children }: { children: React.ReactNode }) {
       {isloadingAnimation ? (
         <>
           <ScrollSpin />
-          <ParticlesComponent id="tsparticles" />
+          {/* <ParticlesComponent id="tsparticles" /> */}
           <NavbarComponent />
           {children}
           <Footer />

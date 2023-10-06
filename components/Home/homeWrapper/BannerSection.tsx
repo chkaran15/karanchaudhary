@@ -1,50 +1,32 @@
 "use client";
+import { VideoSection } from "./BannerTextSection";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useRef, useEffect, useState } from "react";
-import { Cloudinary } from "@cloudinary/url-gen";
 
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [-distance, distance]);
 }
 
-export const BannerSection = () => {
-  const cld = new Cloudinary({ cloud: { cloudName: "dftgrb9fb" } });
-  const videoRef = useRef(null);
+function BannerSection() {
+  const videoRef = useRef<any>(null);
   const { scrollYProgress } = useScroll({ target: videoRef });
-  const y = useParallax(scrollYProgress, 700);
+  const y = useParallax(scrollYProgress, -300);
 
-  console.log("cloudinalry", cld);
   return (
-    <div className="banner-section-wrapper flex  relative w-full h-screen justify-center items-center overflow-hidden ">
-      <div ref={videoRef}>
-        <video
-          className="w-full h-full object-cover"
-          autoPlay
-          loop
-          muted
-          placeholder="blur"
-        >
+    <section className="relative w-full h-screen ">
+      <div className="w-full h-full">
+        <video className="w-full h-full object-cover" autoPlay loop muted>
           <source src="https://res.cloudinary.com/dftgrb9fb/video/upload/v1696534014/video_2160p_ix2a9g.mp4" />
         </video>
       </div>
-      <motion.h1
-        transition={{ duration: 1, delay: 1 }}
-        initial={{ y: "-70%", x: "-70%" }}
-        animate={{ y: "20%", x: "5%" }}
-        className="absolute top-[10%] md:w-[650px]  left-5 text-4xl md:text-6xl font-extrabold"
-      >
-        <span className="text-gray-500">Creative</span> Design Implementation &{" "}
-        <span className="text-gray-500">Web</span> Development{" "}
-        <span className="text-gray-500">Experiences</span>.
-      </motion.h1>
-
+      <VideoSection />
       <motion.div
         transition={{ duration: 1, delay: 1 }}
-        initial={{ y: "-30%" }}
+        initial={{ y: "10%" }}
         animate={{
-          y: "-10%",
+          y: "0%",
           position: "absolute",
           // right: "2%",
           // bottom: "2%",
@@ -84,6 +66,8 @@ export const BannerSection = () => {
         </div>
         {/* </div> */}
       </motion.div>
-    </div>
+    </section>
   );
-};
+}
+
+export default BannerSection;

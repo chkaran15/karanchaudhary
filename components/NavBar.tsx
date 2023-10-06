@@ -97,7 +97,7 @@ function NavBar() {
         </motion.div>
 
         <motion.div
-          transition={{ duration: isActive ? 1 : 0.5 }}
+          transition={{ duration: isActive ? 0.5 : 0.5 }}
           animate={{
             width: isActive ? "430px" : "0px",
             height: isActive ? "50vh" : "0px",
