@@ -3,19 +3,18 @@ import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useRef, useEffect, useState } from "react";
-import { Cloudinary } from "@cloudinary/url-gen";
 
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [-distance, distance]);
 }
 
 export const BannerSection = () => {
-  const cld = new Cloudinary({ cloud: { cloudName: "dftgrb9fb" } });
   const videoRef = useRef(null);
-  const { scrollYProgress } = useScroll({ target: videoRef });
+  const { scrollYProgress } = useScroll({
+    target: videoRef,
+  });
   const y = useParallax(scrollYProgress, 700);
 
-  console.log("cloudinalry", cld);
   return (
     <div className="banner-section-wrapper flex  relative w-full h-screen justify-center items-center overflow-hidden ">
       <div ref={videoRef}>
