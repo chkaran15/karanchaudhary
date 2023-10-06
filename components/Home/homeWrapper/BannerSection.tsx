@@ -2,14 +2,15 @@
 import { VideoSection } from "./BannerTextSection";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import React, { useRef, useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 0.5], [-distance, distance]);
 }
 
 function BannerSection() {
+  const router = useRouter();
   const videoRef = useRef<any>(null);
   const { scrollYProgress } = useScroll({ target: videoRef });
   const y = useParallax(scrollYProgress, -400);
@@ -24,12 +25,22 @@ function BannerSection() {
       <VideoSection />
 
       <div className="absolute top-[50%] translate-y-[-50%] right-16 hidden lg:block">
-        <div className="relative  w-[420px]  h-[800px] shadow-2xl rounded-lg overflow-hidden bg-transparent">
+        {/* <div className="relative  w-[420px]  h-[800px] shadow-2xl rounded-lg overflow-hidden bg-transparent">
           <Image src="/phone.png" fill alt="design" />
           <iframe
-            src="http://localhost:3000/"
+            src="https://v2-potfolio--fancy-lebkuchen-7321da.netlify.app/"
             className="z-10 absolute w-full h-full "
           />
+        </div> */}
+        <div className="w-full h-full ">
+          <video
+            className="w-[40vw] lg:w-[40vw] xl:w-[60vw] h-[70vh] rounded-lg opacity-80 shadow-2xl object-cover"
+            autoPlay
+            loop
+            muted
+          >
+            <source src="https://res.cloudinary.com/dftgrb9fb/video/upload/v1696534014/video_2160p_ix2a9g.mp4" />
+          </video>
         </div>
       </div>
 
@@ -64,7 +75,7 @@ function BannerSection() {
             Full Stack <span className="text-gray-400">Developer :</span> Karan{" "}
             <span className="text-gray-400">Chaudhary</span>
           </h1>
-          <Link href="/aboutme">
+          <div onClick={() => router.push("/about")}>
             <Image
               className=" rounded-full hover:opacity-50 hover:scale-90"
               src="/profile/profile.jpg"
@@ -73,7 +84,7 @@ function BannerSection() {
               height={90}
               loading="lazy"
             />
-          </Link>
+          </div>
         </div>
         {/* </div> */}
       </motion.div>

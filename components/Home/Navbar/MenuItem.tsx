@@ -2,6 +2,7 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { BsArrowUpRight } from "react-icons/bs";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const variants = {
   open: {
@@ -29,15 +30,20 @@ export const MenuItem = ({
   index: number;
   toggle: () => void;
 }) => {
+  const router = useRouter();
+
   return (
     <motion.li
       variants={variants}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
-      <Link
-        href={data?.url}
-        onClick={toggle}
+      <div
+        // href={data?.url}
+        onClick={() => {
+          toggle;
+          router.push(data?.url);
+        }}
         className={`icon-placeholder w-[150px]  md:w-[200px] h-[30px] md:h-[50px] flex justify-between items-center cursor-pointer `}
         style={{ color: data?.color }}
       >
@@ -53,7 +59,7 @@ export const MenuItem = ({
             <BsArrowUpRight size={30} />
           </div> */}
         </div>
-      </Link>
+      </div>
     </motion.li>
   );
 };
