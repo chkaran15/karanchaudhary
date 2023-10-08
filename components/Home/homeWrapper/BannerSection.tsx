@@ -6,44 +6,24 @@ import React, { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 
 function useParallax(value: MotionValue<number>, distance: number) {
-  return useTransform(value, [0, 0.5], [-distance, distance]);
+  return useTransform(value, [0, 2], [-distance, distance]);
 }
 
 function BannerSection() {
   const videoRef = useRef<any>(null);
   const { scrollYProgress } = useScroll({ target: videoRef });
-  const y = useParallax(scrollYProgress, -400);
+  const y = useParallax(scrollYProgress, 300);
 
   return (
-    <section className="relative w-full h-screen ">
+    <section ref={videoRef} className="relative w-full h-screen ">
       <div className="w-full h-full">
         <video className="w-full h-full object-cover" autoPlay loop muted>
           <source src="https://res.cloudinary.com/dftgrb9fb/video/upload/v1696534014/video_2160p_ix2a9g.mp4" />
         </video>
-      </div>
-      <VideoSection />
-
-      <div className="absolute top-[50%] translate-y-[-50%] right-16 hidden lg:block">
-        {/* <div className="relative  w-[420px]  h-[800px] shadow-2xl rounded-lg overflow-hidden bg-transparent">
-          <Image src="/phone.png" fill alt="design" />
-          <iframe
-            src="https://v2-potfolio--fancy-lebkuchen-7321da.netlify.app/"
-            className="z-10 absolute w-full h-full "
-          />
-        </div> */}
-        <div className="w-full h-full ">
-          <video
-            className="w-[40vw] lg:w-[40vw] xl:w-[60vw] h-[70vh] rounded-lg opacity-80 shadow-2xl object-cover"
-            autoPlay
-            loop
-            muted
-          >
-            <source src="https://res.cloudinary.com/dftgrb9fb/video/upload/v1696534014/video_2160p_ix2a9g.mp4" />
-          </video>
-        </div>
+        <VideoSection />
       </div>
 
-      <motion.div
+      {/* <motion.div
         transition={{ duration: 1, delay: 1 }}
         initial={{ y: "10%" }}
         animate={{
@@ -63,7 +43,6 @@ function BannerSection() {
           y,
         }}
       >
-        {/* <div className="home-subtitle absolute px-[2%] flex flex-col gap-4 md:w-[450px]  "> */}
         <h1 className=" text-[18px] lg:text-lg font-semibold">
           We craft enchanting user experiences for startups and tech firms,
           aligning seamlessly with business needs, ensuring satisfaction, and
@@ -77,6 +56,45 @@ function BannerSection() {
           <Link href="/about" >
             <Image
               className=" rounded-full hover:opacity-50 hover:scale-90"
+              src="/profile/profile.jpg"
+              alt="karan"
+              width={90}
+              height={90}
+              loading="lazy"
+            />
+          </Link>
+        </div>
+      </motion.div> */}
+
+      <motion.div
+        transition={{ duration: 2, delay: 0.2 }}
+        initial={{
+          x: "-300%",
+        }}
+        animate={{
+          x: "0%",
+        }}
+        style={{
+          y,
+          background: "white",
+          opacity: "0.8",
+        }}
+        className="banner-text-wrapper absolute m-2 md:right-6 bottom-6 sm:w-[400px]  p-[10px] shadow-md rounded-lg z-10"
+      >
+        {/* <div className="home-subtitle absolute px-[2%] flex flex-col gap-4 md:w-[450px]  "> */}
+        <h1 className=" text-[18px] lg:text-lg font-semibold">
+          We craft enchanting user experiences for startups and tech firms,
+          aligning seamlessly with business needs, ensuring satisfaction, and
+          fostering synergy.
+        </h1>
+        <div className="flex justify-between items-center">
+          <h1 className="text-2xl  font-bold w-[280px]">
+            Full Stack <span className="text-gray-400">Developer :</span> Karan{" "}
+            <span className="text-gray-400">Chaudhary</span>
+          </h1>
+          <Link href="/about">
+            <Image
+              className=" rounded-full hover:opacity-100  hover:border-t-4 hover:border-r-4 hover:border-purple-700 hover:scale-90"
               src="/profile/profile.jpg"
               alt="karan"
               width={90}
