@@ -21,10 +21,10 @@ const config: Config = {
       },
       screens:{
         xs:"375px",
-        sm:"400px"
+        sm:"400px",
+        standard:"1440px",
       }
     },
-    
   },
   plugins: [],
 }

@@ -81,7 +81,7 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
 
 export const VelocityAnimation = () => {
   return (
-    <section className="velocity-wrapper relative w-full py-[5%]  ">
+    <section className="velocity-wrapper relative w-full py-[5%]   ">
       <ParallaxText baseVelocity={-5}>Karan</ParallaxText>
       <ParallaxText baseVelocity={5}>Chaudhary</ParallaxText>
     </section>

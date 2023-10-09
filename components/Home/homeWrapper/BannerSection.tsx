@@ -18,11 +18,14 @@ function BannerSection() {
     <section ref={videoRef} className="relative w-full h-screen ">
       <div className="w-full h-full">
         <video
-          className="hidden md:block w-full h-full object-cover"
+          className="hidden md:block w-full h-full object-cover "
           autoPlay
           loop
           muted
+          playsInline
         >
+          {/* <source src="/home/homeVideo.mp4" /> */}
+          {/* <source src="/home/aboutVideo.mp4" /> */}
           <source src="https://res.cloudinary.com/dftgrb9fb/video/upload/v1696534014/video_2160p_ix2a9g.mp4" />
         </video>
         <Image
