@@ -17,9 +17,21 @@ function BannerSection() {
   return (
     <section ref={videoRef} className="relative w-full h-screen ">
       <div className="w-full h-full">
-        <video className="w-full h-full object-cover" autoPlay loop muted>
+        <video
+          className="hidden md:block w-full h-full object-cover"
+          autoPlay
+          loop
+          muted
+        >
           <source src="https://res.cloudinary.com/dftgrb9fb/video/upload/v1696534014/video_2160p_ix2a9g.mp4" />
         </video>
+        <Image
+          fill
+          src="/home/homeImage.png"
+          alt="banner"
+          loading="lazy"
+          className="md:hidden object-cover"
+        />
         <VideoSection />
       </div>
 
