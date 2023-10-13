@@ -8,7 +8,7 @@ import { HomeServiceInfo } from "@/components/Home/homeWrapper/HomeServiceInfo";
 
 export default function Home() {
   return (
-    <main className="home-page-wrapper ">
+    <main className="home-page-wrapper h-[400vh] ">
       <BannerSection />
       <VelocityAnimation />
       <HomeAboutSection />
