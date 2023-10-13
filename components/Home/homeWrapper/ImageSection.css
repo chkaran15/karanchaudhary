@@ -1,0 +1,24 @@
+/* h1 {
+    margin: 0;
+    color: white;
+    font-size: 145px;
+    line-height: 174px;
+    white-space: nowrap;
+    display: inline-flex;
+  } */
+  
+  .fullscreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70vh;
+    /* background-color: brown; */
+    overflow: hidden;
+  }
+  
+  .container {
+    margin: 0 auto;
+    max-width: 1560px;
+    padding: 1px 74px;
+  }

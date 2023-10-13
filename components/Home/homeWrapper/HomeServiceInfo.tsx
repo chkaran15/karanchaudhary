@@ -40,18 +40,18 @@ export const HomeServiceInfo = () => {
   }, []);
   
   return (
-    <section className="about-section-wrapper relative py-[8%]  w-full bg-primary1  px-[5%] border-t border-purple-900">
-      <h1 className="text-white text-[50px] md:text-[100px]">
+    <section className="about-section-wrapper relative py-[8%]  w-full  px-[5%] border-t border-purple-900">
+      <h1 className=" text-[50px] md:text-[100px]">
         Project and Collaboration
       </h1>
-      <div className="about-wrapper flex flex-col pt-10 md:flex-row gap-20 px-[3%] text-white ">
+      <div className="about-wrapper flex flex-col pt-10 md:flex-row gap-20 px-[3%]  ">
         <div className="about-left-wrapper text-[28px] md:text-[40px] md:w-[60%]">
-          <h1 className="text-[60px] md:text-[80px] text-white flex items-center gap-2">
+          <h1 className="text-[60px] md:text-[80px]  flex items-center gap-2">
             {projectCount}
             {"+"}
             <span className="text-base">completed projects</span>
           </h1>
-          <h1 className="text-[60px] md:text-[80px] text-white flex items-center gap-2">
+          <h1 className="text-[60px] md:text-[80px]  flex items-center gap-2">
             {collaborationCount}
             {"+"}
             <span className="text-base">collaborations</span>

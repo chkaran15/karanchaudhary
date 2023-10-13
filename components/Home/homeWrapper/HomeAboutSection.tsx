@@ -1,7 +1,8 @@
 "use client";
 import Link from "next/link";
-import React, { useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
+import gsap from "gsap";
 
 function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 2], [-distance, distance]);
@@ -10,23 +11,38 @@ function useParallax(value: MotionValue<number>, distance: number) {
 export const HomeAboutSection = () => {
   const aboutRef = useRef<any>(null);
   const { scrollYProgress } = useScroll({ target: aboutRef });
+  const textRef = useRef<any>(null);
 
   const y = useParallax(scrollYProgress, 500);
+
+  useLayoutEffect(() => {
+    console.log(textRef);
+    gsap.fromTo(
+      ".text-right",
+      { opacity: 0, y: 100 },
+      { opacity: 1, y: 0, duration: 2 }
+    );
+    gsap.fromTo(
+      textRef.current,
+      { opacity: 0, y: 150 },
+      { opacity: 1, y: 0, duration: 2, delay: 0.5 }
+    );
+  }, [`${textRef.current}`]);
 
   return (
     <section
       ref={aboutRef}
-      className="about-section-wrapper relative py-[8%]  w-full bg-primary1 flex justify-center items-center border-t border-purple-900 px-[5%]"
+      className="about-section-wrapper relative py-[8%]  w-full flex justify-center items-center border-t border-purple-900 px-[5%]"
     >
-      <div className="about-wrapper flex flex-col lg:flex-row gap-20 justify-between px-[3%] text-white ">
+      <div className="about-wrapper flex flex-col lg:flex-row gap-20 justify-between px-[3%]  ">
         <div className="about-left-wrapper text-[28px] md:text-[50px] lg:w-[60%] ">
-          <h1>
+          <h1 className="text-right">
             Helping brands to stand out in the digital era. Together we will set
             the new status quo. No nonsense, always on the cutting edge.
           </h1>
         </div>
         <div className="about-right-wrapper text-base md:text-[25px] tracking-normal leading-10 lg:w-[30%]">
-          <h1>
+          <h1 ref={textRef}>
             The combination of my passion for design, code & interaction
             positions me in a unique place in the web design world.
           </h1>
