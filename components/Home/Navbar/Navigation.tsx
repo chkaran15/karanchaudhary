@@ -48,13 +48,6 @@ export default function Navigation({ dateTime, meridiem }: NavDropDownProps) {
             Nepal, Kathmandu <span className="text-black">{dateTime}</span>{" "}
             {meridiem}
           </h1>
-
-          {/* <div className="menu-wrapper flex items-center gap-2">
-            <h1 className="menu-text  text-normal ">Close</h1>
-            <div className="menu-icon w-[30px] h-[30px] rounded-full flex justify-center items-center border border-black cursor-pointer hover:bg-lightblue">
-              <MenuToggle toggle={() => setOpen(false)} />
-            </div>
-          </div> */}
         </div>
 
         <div className="relative h-full  flex gap-4 justify-between">

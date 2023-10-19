@@ -65,55 +65,46 @@ function NavBar() {
   return (
     <nav className="navbar-wrapper px-4 md:px-10  shadow-2xl  py-[19px] flex justify-between items-center">
       <Logo />
-      <div
-        className={`flex lg:w-[35%] xl:w-[25%] justify-between items-center`}
+      <motion.div
+        onClick={() => setIsActive(!isActive)}
+        className="w-10 h-10 relative z-10 rounded-full bg-green-400 text-white flex justify-center items-center   text-xs cursor-pointer overflow-hidden"
       >
-        <h1 className={`hidden lg:block  font-semibold text-white`}>
-          Nepal, Kathmandu <span className="text-slate-800">{dateTime}</span>{" "}
-          {meridiem}
-        </h1>
-
         <motion.div
-          onClick={() => setIsActive(!isActive)}
-          className="w-10 h-10 relative z-10 rounded-full bg-green-400 text-white flex justify-center items-center   text-xs cursor-pointer overflow-hidden"
-        >
-          <motion.div
-            transition={{ duration: 0.5 }}
-            className="bg-green-400 -z-10"
-            animate={{
-              position: "absolute",
-              width: isActive ? "100%" : "0%",
-              height: isActive ? "100%" : "0%",
-              borderRadius: "50%",
-              backgroundColor: isActive ? "red" : "green",
-            }}
-          ></motion.div>
-
-          {isActive ? (
-            <AiOutlineClose size={25} color={"white"} fontWeight={"bold"} />
-          ) : (
-            <HiOutlineMenuAlt4 size={25} />
-          )}
-        </motion.div>
-
-        <motion.div
-          transition={{ duration: isActive ? 0.5 : 0.5 }}
+          transition={{ duration: 0.5 }}
+          className="bg-green-400 -z-10"
           animate={{
-            width: isActive ? "430px" : "0px",
-            height: isActive ? "50vh" : "0px",
-            borderRadius: "20px",
-            display: "flex",
-            // backgroundColor: isActive ? "red" : "green",
+            position: "absolute",
+            width: isActive ? "100%" : "0%",
+            height: isActive ? "100%" : "0%",
+            borderRadius: "50%",
+            backgroundColor: isActive ? "red" : "green",
           }}
-          className={`nav-components ${
-            isActive ? "block  " : "hidden "
-          }  shadow-lg bg-white absolute top-0 right-0 md:top-6 md:right-10`}
-        >
-          {isActive ? (
-            <Navigation dateTime={dateTime} meridiem={meridiem} />
-          ) : null}
-        </motion.div>
-      </div>
+        ></motion.div>
+
+        {isActive ? (
+          <AiOutlineClose size={25} color={"white"} fontWeight={"bold"} />
+        ) : (
+          <HiOutlineMenuAlt4 size={25} />
+        )}
+      </motion.div>
+      <motion.div
+        transition={{ duration: isActive ? 0.5 : 0.5 }}
+        animate={{
+          width: isActive ? "430px" : "0px",
+          height: isActive ? "50vh" : "0px",
+          borderRadius: "20px",
+          display: "flex",
+          // backgroundColor: isActive ? "red" : "green",
+        }}
+        className={`nav-components ${
+          isActive ? "block  " : "hidden "
+        }  shadow-lg bg-white absolute top-0 right-0 md:top-6 md:right-10`}
+      >
+        {isActive ? (
+          <Navigation dateTime={dateTime} meridiem={meridiem} />
+        ) : null}
+      </motion.div>
+      \{" "}
     </nav>
   );
 }
