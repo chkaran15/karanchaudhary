@@ -106,7 +106,10 @@ export const HomeServiceInfo = () => {
       ref={infoRef}
       className="about-section-wrapper relative w-full  px-[5%] border border-red-500 pb-[5%] "
     >
-      <div ref={titleRef} className=" text-[80px] opacity-0 translate-y-10">
+      <div
+        ref={titleRef}
+        className=" text-[40px] md:text-[80px] opacity-0 translate-y-10"
+      >
         Project and Collaboration
       </div>
       <div className="about-wrapper flex flex-col pt-10 md:flex-row gap-20 px-[3%]  ">

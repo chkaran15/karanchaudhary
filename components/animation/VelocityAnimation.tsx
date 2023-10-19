@@ -24,7 +24,7 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
   const smoothVelocity = useSpring(scrollVelocity, {
-    damping: 50,
+    damping: 500,
     stiffness: 400,
   });
   const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
@@ -36,7 +36,7 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
    * have to replace for wrapping that works for you or dynamically
    * calculate
    */
-  const x = useTransform(baseX, (v) => `${wrap(-20, -45, v)}%`);
+  const x = useTransform(baseX, (v) => `${wrap(-50, -150, v)}%`);
 
   const directionFactor = useRef<number>(1);
   useAnimationFrame((t, delta) => {
@@ -60,12 +60,9 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
   return (
     <div className="parallax overflow-hidden w-full tracking-[-2px] leading-[0.8] flex flex-nowrap whitespace-nowrap">
       <motion.div
-        className="scroller w-full text-[120px] font-medium  uppercase flex gap-20 flex-nowrap whitespace-nowrap"
+        className="scroller w-full text-[120px] md:text-[250px] font-extrabold uppercase flex gap-20 flex-nowrap whitespace-nowrap"
         style={{ x }}
       >
-        <span>{children} </span>
-        <span>{children} </span>
-        <span>{children} </span>
         <span>{children} </span>
         <span>{children} </span>
         <span>{children} </span>
@@ -105,11 +102,11 @@ export const VelocityAnimation = () => {
       </div>
       <section className="velocity-wrapper w-full  ">
         <div ref={leftRef} className="opacity-0">
-          <ParallaxText baseVelocity={-5}>Karan</ParallaxText>
+          <ParallaxText baseVelocity={-7}>Make Yourself Shine</ParallaxText>
         </div>
-        <div ref={rightRef} className="opacity-0">
+        {/* <div ref={rightRef} className="opacity-0">
           <ParallaxText baseVelocity={5}>Chaudhary</ParallaxText>
-        </div>
+        </div> */}
       </section>
     </div>
   );
