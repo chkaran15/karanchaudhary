@@ -1,5 +1,5 @@
 "use client";
-import { VideoSection } from "./BannerTextSection";
+import { BannerTextSection} from "./BannerTextSection";
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import Image from "next/image";
 import React, { useRef, useEffect, useState } from "react";
@@ -35,7 +35,7 @@ function BannerSection() {
           loading="lazy"
           className="md:hidden object-cover"
         />
-        <VideoSection />
+        <BannerTextSection />
       </div>
 
       {/* <motion.div

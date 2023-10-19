@@ -1,82 +1,80 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
+import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export default function ImageSection() {
-  const growRef = useRef(null);
-  const taglineRef = useRef(null);
+export const ImageWrapper = () => {
+  const aboutRef = useRef<any>(null);
+  const moveRef = useRef<any>(null);
 
-  useEffect(() => {
+  const textRef = useRef<any>(null);
+
+  useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const growTl = gsap.timeline({
+    const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: growRef.current,
+        trigger: aboutRef.current,
         scrub: 1,
-        pin: true,
-        start: "top center",
-        end: "top 800px",
-        ease: "power2.inOut",
-        markers: true,
+        start: "top 200px",
+        end: "+=500px",
+        // markers: true,
       },
     });
 
-    growTl.to(growRef.current, {
-      duration: 2.5,
-      delay:0.7,
-      scale: 1,
-      pin: true,
-      y: 0,
-      ease: "power2.inOut",
-      markers: true,
+    tl.to(moveRef.current, {
+      duration: 1.5,
+      opacity: 1,
+      position: "absolute",
+      bottom: "0",
     });
 
+    gsap.fromTo(
+      ".text-right",
+      { opacity: 0, y: 100 },
+      { opacity: 1, y: 0, duration: 2 }
+    );
+
+    gsap.fromTo(
+      textRef.current,
+      { opacity: 0, y: 150 },
+      { opacity: 1, y: 0, duration: 2, delay: 0.5 }
+    );
+
+    // Move the moveRef element upward
+    gsap.to(moveRef.current, {
+      scrollTrigger: {
+        trigger: aboutRef.current,
+        scrub: 1,
+        start: "top 500px",
+        end: "+=400px",
+        // markers: true,
+      },
+      width: "100%",
+      y: -150,
+    });
   }, []);
 
   return (
-    <>
-      <div className="header relative w-full flex justify-center items-center text-3xl overflow-hidden ">
-        {/* <div className="absolute top-5 left-0">
-          <TextAnimation />
-        </div> */}
-        <div className="image relative flex justify-center items-center ">
-          <div className="w-full ">
-            <img
-              ref={growRef}
-              id="grow"
-              src="/home/homeImage.png"
-              alt="Random"
-              className="w-full object-cover transform scale-50"
-            />
-          </div>
-          {/* <div className="flex gap-2 items-center "> */}
-          {/* <h1
-              ref={taglineRef}
-              // className="tagline absolute opacity-0 text-white top-1/2 transform translate-y-[500px]"
-              className="tagline absolute opacity-0 text-white top-1/2 left-[-10%] transform"
-            >
-              this is the tagline
-            </h1> */}
-          {/* <h1
-              ref={taglineRef}
-              // className="tagline absolute opacity-0 text-white top-1/2 transform translate-y-[500px]"
-              className="tagline absolute opacity-0 text-white top-1/2 right-[-10%] transform"
-            >
-              this is the tagline2
-            </h1> */}
-          {/* </div> */}
-          {/* <KiteAnimation /> */}
-          <div
-            ref={taglineRef}
-            className="absolute left-[50%] transform top-1/2 translate-x-[-50%] flex gap-2 items-center opacity-0 text-white"
-          >
-            <h1>Happy</h1>
-            <h1>Dashain</h1>
-          </div>
-        </div>
+    <section
+      ref={aboutRef}
+      className="about-section-wrapper w-full relative h-screen overflow-hidden"
+    >
+      <div
+        ref={moveRef}
+        className="about-buttom  w-[20%] h-full top-0  absolute left-[50%]  translate-x-[-50%] "
+      >
+        <video
+          className="w-full h-full object-cover "
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="https://res.cloudinary.com/dftgrb9fb/video/upload/v1696534014/video_2160p_ix2a9g.mp4" />
+        </video>
       </div>
-    </>
+    </section>
   );
-}
+};

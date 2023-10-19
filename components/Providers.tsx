@@ -8,13 +8,13 @@ import { OpeningAnimation } from "./animation/OpeningAnimation";
 import { ScrollSpin } from "./animation/ScrollSpin";
 
 function Provider({ children }: { children: React.ReactNode }) {
-  const [isloadingAnimation, setIsLoadingAnimation] = useState<boolean>(false);
+  const [isloadingAnimation, setIsLoadingAnimation] = useState<boolean>(true);
 
   useEffect(() => {
     // Simulate loading of section1
     setTimeout(() => {
       setIsLoadingAnimation(true);
-    }, 3000); // Adjust the time to match your actual loading time
+    }, 1000); // Adjust the time to match your actual loading time
     // You can replace the setTimeout above with your actual loading logic.
   }, []);
 

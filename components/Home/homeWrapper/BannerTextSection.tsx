@@ -3,26 +3,17 @@ import { useScroll } from "framer-motion";
 import { useRef } from "react";
 import { motion } from "framer-motion";
 
-export const VideoSection = () => {
+export const BannerTextSection = () => {
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["end end", "start start"],
-  });
+  // const { scrollYProgress } = useScroll({
+  //   target: ref,
+  //   offset: ["end end", "start start"],
+  // });
   return (
-    <motion.section
-      transition={{ duration: 0.7 }}
-      initial={{ y: "15% " }}
-      animate={{ y: "0% " }}
-      className="absolute top-0 left-0 w-full h-screen  flex justify-center  items-center"
-    >
-      <div ref={ref} className="w-full h-full  border-red border-dotted">
-        <h1 className="progress sticky top-10 p-16 md:w-[650px]  text-4xl md:text-6xl font-extrabold text-purple-900">
-          <span className="text-white">Creative</span> Design Implementation &{" "}
-          <span className="text-white">Web</span> Development{" "}
-          <span className="text-white">Experiences</span>.
+      <div ref={ref} className="w-[60%] pt-[5%] pl-[2%] ">
+        <h1 className="progress  text-4xl md:text-[60px] font-normal trackling-normal leading-[60px] uppercase">
+          A Creative Design Implementation & web Development Experiences
         </h1>
       </div>
-    </motion.section>
   );
 };

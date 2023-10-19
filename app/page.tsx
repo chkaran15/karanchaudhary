@@ -5,19 +5,20 @@ import BannerSection from "@/components/Home/homeWrapper/BannerSection";
 import { VelocityAnimation } from "@/components/animation/VelocityAnimation";
 import { HomeAboutSection } from "@/components/Home/homeWrapper/HomeAboutSection";
 import { HomeServiceInfo } from "@/components/Home/homeWrapper/HomeServiceInfo";
-import ImageWrapper from "@/components/Home/homeWrapper/ImageWrapper";
+
 import HomeWrapperAnimaiton from "@/components/Home/homeWrapper/HomeWrapperAnimation";
+import { ImageWrapper } from "@/components/Home/homeWrapper/ImageWrapper";
 
 export default function Home() {
   return (
     <main className="home-page-wrapper ">
-      <BannerSection />
+      {/* <BannerSection /> */}
       <VelocityAnimation />
       <HomeAboutSection />
-      {/* <HomeServiceInfo /> */}
-      <HomeWrapperAnimaiton />
+      <ImageWrapper />
+      <HomeServiceInfo />
+      {/* <HomeWrapperAnimaiton /> */}
       {/* <ImageSection /> */}
-      {/* <ImageWrapper /> */}
     </main>
   );
 }

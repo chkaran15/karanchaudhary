@@ -1,9 +1,11 @@
 import Provider from "@/components/Providers";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Familjen_Grotesk } from "next/font/google";
+
 
 const inter = Inter({ subsets: ["latin"] });
+const founder = Familjen_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Potfolio | Karan Chaudhary",
@@ -19,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <link rel="icon" href="/karan.png" sizes="128 *111" />
-      <body className={inter.className}>
+      <body className={founder.className}>
         <Provider>{children}</Provider>
       </body>
     </html>

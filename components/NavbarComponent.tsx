@@ -54,7 +54,7 @@ function NavbarComponent() {
     <div className="w-full fixed z-[99]">
       <div
         ref={navRef}
-        className={`absolute w-full origin-top mb-10 transform ${
+        className={`absolute w-full origin-top mb-10 transform bg-white ${
           show
             ? "block animate-top-nav transition ease-in duration-700 delay-700"
             : "animate-down-nav hidden"

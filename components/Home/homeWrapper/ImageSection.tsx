@@ -39,7 +39,6 @@ import './ImageSection.css'; // Import your CSS file
 
 const ImageSection = () => {
   useEffect(() => {
-    // const scrollableTextLength = document.querySelector('[data-scrollable-text]').clientWidth;
 
     gsap.config({
       autoSleep: 60,
@@ -57,31 +56,6 @@ const ImageSection = () => {
     });
 
     ScrollTrigger.refresh();
-
-    // const scrollTextTl = gsap.timeline({
-    //   paused: true,
-    // }).to('[data-scrollable-text]', {
-    //   translateX: -scrollableTextLength + 1000,
-    // }).to('[data-scrollable-text]', {
-    //   onStart: () => {
-    //     gsap.to(document.querySelector('.vertical-scrollable-content'), {
-    //       y: -350,
-    //     });
-    //   },
-    // });
-
-    // ScrollTrigger.create({
-    //   animation: scrollTextTl,
-    //   trigger: '.main-section',
-    //   start: 'top top',
-    //   end: `=+${scrollableTextLength}`,
-    //   scrub: 0.1,
-    //   pin: true,
-    //   pinnedContainer: '.main-section',
-    //   pinSpacing: true,
-    //   markers: true,
-    //   id: 'main',
-    // });
 
     const animationTl1 = gsap.timeline({
       paused: false,
@@ -105,7 +79,7 @@ const ImageSection = () => {
   }, []);
 
   return (
-    <div className="fullscreen bg-yellow-300" id="second" data-second-section>
+    <div className="fullscreen border" id="second" data-second-section>
       <div className="container">
         <h1 data-animated-item>Second section</h1>
         <div className="wrapp">

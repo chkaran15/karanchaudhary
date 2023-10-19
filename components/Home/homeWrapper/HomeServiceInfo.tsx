@@ -38,9 +38,9 @@ export const HomeServiceInfo = () => {
   useEffect(() => {
     increaseCountNumber(60);
   }, []);
-  
+
   return (
-    <section className="about-section-wrapper relative py-[8%]  w-full  px-[5%] border-t border-purple-900">
+    <section className="about-section-wrapper relative w-full  px-[5%] ">
       <h1 className=" text-[50px] md:text-[100px]">
         Project and Collaboration
       </h1>

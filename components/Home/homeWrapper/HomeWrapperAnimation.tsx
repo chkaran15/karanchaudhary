@@ -21,7 +21,7 @@ export default function HomeWrapperAnimaiton() {
         end: "+=200px",
         ease: "power2.inOut",
 
-        markers: true,
+        // markers: true,
       },
     });
 
@@ -70,13 +70,13 @@ export default function HomeWrapperAnimaiton() {
             />
           {/* </div> */}
           {/* <div className="flex gap-2 items-center "> */}
-          {/* <h1
+          <h1
               ref={taglineRef}
               // className="tagline absolute opacity-0 text-white top-1/2 transform translate-y-[500px]"
               className="tagline absolute opacity-0 text-white top-1/2 left-[-10%] transform"
             >
               this is the tagline
-            </h1> */}
+            </h1>
           {/* <h1
               ref={taglineRef}
               // className="tagline absolute opacity-0 text-white top-1/2 transform translate-y-[500px]"

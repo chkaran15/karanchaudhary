@@ -11,6 +11,7 @@ import {
 } from "framer-motion";
 
 import { wrap } from "@motionone/utils";
+import { BannerTextSection } from "../Home/homeWrapper/BannerTextSection";
 
 interface ParallaxProps {
   children: string;
@@ -55,11 +56,10 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
     baseX.set(baseX.get() + moveBy);
   });
 
-
   return (
     <div className="parallax overflow-hidden w-full tracking-[-2px] leading-[0.8] flex flex-nowrap whitespace-nowrap">
       <motion.div
-        className="scroller w-full text-[150px] font-extrabold text-purple-500 uppercase flex gap-20 flex-nowrap whitespace-nowrap"
+        className="scroller w-full text-[120px] font-medium  uppercase flex gap-20 flex-nowrap whitespace-nowrap"
         style={{ x }}
       >
         <span>{children} </span>
@@ -77,9 +77,26 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
 
 export const VelocityAnimation = () => {
   return (
-    <section className="velocity-wrapper w-full py-[5%]   ">
-      <ParallaxText baseVelocity={-5}>Karan</ParallaxText>
-      <ParallaxText baseVelocity={5}>Chaudhary</ParallaxText>
-    </section>
+    <>
+      <div className=" py-[6%] ">
+        <BannerTextSection />
+      </div>
+      <section className="velocity-wrapper w-full py-[5%] ">
+        <motion.div
+          transition={{ duration: 3.5, delay: 0.5 }}
+          initial={{ x: "100%" }}
+          animate={{ x: "0%" }}
+        >
+          <ParallaxText baseVelocity={-5}>Karan</ParallaxText>
+        </motion.div>
+        <motion.div
+          transition={{ duration: 3.5, delay: 0.5 }}
+          initial={{ x: "-100%" }}
+          animate={{ x: "0%" }}
+        >
+          <ParallaxText baseVelocity={5}>Chaudhary</ParallaxText>
+        </motion.div>
+      </section>
+    </>
   );
 };
