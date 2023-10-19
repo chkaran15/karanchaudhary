@@ -11,7 +11,7 @@ import { ImageWrapper } from "@/components/Home/homeWrapper/ImageWrapper";
 
 export default function Home() {
   return (
-    <main className="home-page-wrapper ">
+    <main className="home-page-wrapper  ">
       {/* <BannerSection /> */}
       <VelocityAnimation />
       <HomeAboutSection />

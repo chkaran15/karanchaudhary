@@ -8,8 +8,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 export const HomeAboutSection = () => {
   const aboutRef = useRef<any>(null);
   const moveRef = useRef<any>(null);
-
   const textRef = useRef<any>(null);
+  const titleRef = useRef<any>(null);
+  const infoRef = useRef<any>(null);
+  const leftRef = useRef<any>(null);
+  const rightRef = useRef<any>(null);
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -31,18 +34,6 @@ export const HomeAboutSection = () => {
       bottom: "0",
     });
 
-    gsap.fromTo(
-      ".text-right",
-      { opacity: 0, y: 100 },
-      { opacity: 1, y: 0, duration: 2 }
-    );
-
-    gsap.fromTo(
-      textRef.current,
-      { opacity: 0, y: 150 },
-      { opacity: 1, y: 0, duration: 2, delay: 0.5 }
-    );
-
     // Move the moveRef element upward
     gsap.to(moveRef.current, {
       scrollTrigger: {
@@ -54,6 +45,50 @@ export const HomeAboutSection = () => {
       },
       y: -600, // adjust this value based on how much you want the element to move upward
     });
+
+    const textl = gsap.timeline({
+      scrollTrigger: {
+        trigger: textRef.current,
+        scrub: 1,
+        start: "top 700px",
+        end: "+=200px",
+        // markers: true,
+      },
+    });
+
+    textl.to(titleRef.current, {
+      duration: 0.3,
+      opacity: 1,
+      y: 0,
+    });
+
+    const infotl = gsap.timeline({
+      scrollTrigger: {
+        trigger: infoRef.current,
+        scrub: 1,
+        start: "top 700px",
+        end: "+=200px",
+        // markers: true,
+      },
+    });
+
+    infotl.fromTo(
+      leftRef.current,
+      {
+        opacity: 0,
+        x: -100,
+      },
+      { duration: 0.5, opacity: 1, x: 0 }
+    );
+
+    infotl.fromTo(
+      rightRef.current,
+      {
+        opacity: 0,
+        x: 100,
+      },
+      { duration: 0.5, opacity: 1, x: 0 }
+    );
   }, []);
 
   return (
@@ -61,17 +96,28 @@ export const HomeAboutSection = () => {
       ref={aboutRef}
       className="about-section-wrapper relative py-[8%]  w-full flex justify-center items-center  px-[5%]"
     >
-      <div className="about-wrapper flex flex-col gap-20  ">
-        <div className="text-[80px]">About</div>
-        <div className="flex flex-col lg:flex-row gap-20 justify-between px-[3%]">
-          <div className="about-left-wrapper text-[28px] md:text-[50px] lg:w-[60%] ">
+      <div ref={textRef} className="about-wrapper flex flex-col gap-20  ">
+        <div ref={titleRef} className="text-[80px] opacity-0 translate-y-10 ">
+          About
+        </div>
+        <div
+          ref={infoRef}
+          className="flex flex-col lg:flex-row gap-20 justify-between px-[3%]"
+        >
+          <div
+            ref={leftRef}
+            className="about-left-wrapper  text-[28px] md:text-[50px] lg:w-[60%] "
+          >
             <h1 className="text-right">
               Helping brands to stand out in the digital era. Together we will
               set the new status quo. No nonsense, always on the cutting edge.
             </h1>
           </div>
-          <div className="about-right-wrapper text-base md:text-[25px] tracking-normal leading-10 lg:w-[30%]">
-            <h1 ref={textRef}>
+          <div
+            ref={rightRef}
+            className="about-right-wrapper  text-base md:text-[25px] tracking-normal leading-10 lg:w-[30%]"
+          >
+            <h1 className="text-left">
               The combination of my passion for design, code & interaction
               positions me in a unique place in the web design world.
             </h1>
@@ -83,7 +129,7 @@ export const HomeAboutSection = () => {
         ref={moveRef}
         className="about-buttom absolute bottom-0  left-[50%] lg:left-[70%] translate-x-[-50%] lg:translate-x-[-30%] flex justify-center items-center w-[150px] h-[150px] rounded-full bg-black text-white cursor-pointer"
       >
-        <Link href={"/about"}>About me</Link>
+        <Link href={"/about"}>Click me</Link>
       </div>
     </section>
   );

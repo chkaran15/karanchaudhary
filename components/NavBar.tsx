@@ -53,11 +53,8 @@ function NavBar() {
       setDateTime(time);
     }, 1000);
 
-    // Clear the interval when the component unmounts
     return () => clearInterval(intervalID);
-  }, []); // Empty dependency array means this effect runs only once on component mount
-
-  // const [isOpen, toggleOpen] = useCycle(false, true);
+  }, []); 
 
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef) || { height: 600 };
@@ -67,17 +64,17 @@ function NavBar() {
       <Logo />
       <motion.div
         onClick={() => setIsActive(!isActive)}
-        className="w-10 h-10 relative z-10 rounded-full bg-green-400 text-white flex justify-center items-center   text-xs cursor-pointer overflow-hidden"
+        className="w-10 h-10 relative z-10 rounded-full border-2 border-black  text-black flex justify-center items-center  text-xs cursor-pointer overflow-hidden"
       >
         <motion.div
           transition={{ duration: 0.5 }}
-          className="bg-green-400 -z-10"
+          className="-z-10"
           animate={{
             position: "absolute",
             width: isActive ? "100%" : "0%",
             height: isActive ? "100%" : "0%",
             borderRadius: "50%",
-            backgroundColor: isActive ? "red" : "green",
+            backgroundColor: isActive ? "black" : "black",
           }}
         ></motion.div>
 
@@ -104,7 +101,6 @@ function NavBar() {
           <Navigation dateTime={dateTime} meridiem={meridiem} />
         ) : null}
       </motion.div>
-      \{" "}
     </nav>
   );
 }

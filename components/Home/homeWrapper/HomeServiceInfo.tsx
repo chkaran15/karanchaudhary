@@ -2,6 +2,8 @@
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
 
 export const HomeServiceInfo = () => {
   let [projectCount, setProjectCount] = React.useState(0);
@@ -31,33 +33,105 @@ export const HomeServiceInfo = () => {
     }
   }
 
-  useEffect(() => {
-    increaseCount(50);
-  }, []);
+  const infoRef = useRef(null);
+  const textRef = useRef(null);
+  const titleRef = useRef(null);
+  const itemRef = useRef(null);
+  const item1Ref = useRef(null);
 
   useEffect(() => {
-    increaseCountNumber(60);
+    gsap.registerPlugin(ScrollTrigger);
+
+    const infotl = gsap.timeline({
+      scrollTrigger: {
+        trigger: infoRef.current,
+        scrub: 1,
+        start: "top 700px",
+        end: "+=200px",
+        // markers: true,
+      },
+    });
+
+    infotl.to(titleRef.current, {
+      duration: 0.3,
+      opacity: 1,
+      y: 0,
+    });
+
+    const itemtl = gsap.timeline({
+      scrollTrigger: {
+        trigger: infoRef.current,
+        scrub: 1,
+        start: "top 600px",
+        end: "+=200px",
+        onToggle: () => {
+          increaseCount(50);
+          increaseCountNumber(60);
+        },
+      },
+    });
+
+    itemtl.to(itemRef.current, {
+      duration: 0.3,
+      opacity: 1,
+      y: 0,
+    });
+    itemtl.to(item1Ref.current, {
+      duration: 0.3,
+      opacity: 1,
+      y: 0,
+    });
+
+    const texttl = gsap.timeline({
+      scrollTrigger: {
+        trigger: infoRef.current,
+        scrub: 1,
+        start: "top 500px",
+        end: "+=400px",
+      },
+    });
+
+    itemtl.fromTo(
+      textRef.current,
+      {
+        opacity: 0,
+        x: 100,
+      },
+      { duration: 1, delay: 0.5, opacity: 1, x: 0 }
+    );
   }, []);
 
   return (
-    <section className="about-section-wrapper relative w-full  px-[5%] ">
-      <h1 className=" text-[50px] md:text-[100px]">
+    <section
+      ref={infoRef}
+      className="about-section-wrapper relative w-full  px-[5%] border border-red-500 pb-[5%] "
+    >
+      <div ref={titleRef} className=" text-[80px] opacity-0 translate-y-10">
         Project and Collaboration
-      </h1>
+      </div>
       <div className="about-wrapper flex flex-col pt-10 md:flex-row gap-20 px-[3%]  ">
         <div className="about-left-wrapper text-[28px] md:text-[40px] md:w-[60%]">
-          <h1 className="text-[60px] md:text-[80px]  flex items-center gap-2">
+          <h1
+            ref={itemRef}
+            className="text-[60px] md:text-[80px] opacity-0 translate-y-10 flex items-center gap-2"
+          >
             {projectCount}
             {"+"}
             <span className="text-base">completed projects</span>
           </h1>
-          <h1 className="text-[60px] md:text-[80px]  flex items-center gap-2">
+          <h1
+            ref={item1Ref}
+            className="text-[60px] md:text-[80px] opacity-0 translate-y-10 flex items-center gap-2"
+          >
             {collaborationCount}
             {"+"}
             <span className="text-base">collaborations</span>
           </h1>
         </div>
-        <div className="about-right-wrapper text-base lg:text-[30px] lg:leading-8 lg:trackling-normal lg:w-[45%]">
+        <div
+          ref={textRef}
+          className="about-right-wrapper text-base lg:text-[30px] lg:leading-8 lg:trackling-normal lg:w-[45%]"
+        >
           <h1>
             {/* I'm excelled in numerous projects, and my achievements are
             well-documented in my extensive portfolio of case studies. I have

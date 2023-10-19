@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import {
   motion,
   useScroll,
@@ -12,6 +12,7 @@ import {
 
 import { wrap } from "@motionone/utils";
 import { BannerTextSection } from "../Home/homeWrapper/BannerTextSection";
+import gsap from "gsap";
 
 interface ParallaxProps {
   children: string;
@@ -76,27 +77,40 @@ function ParallaxText({ children, baseVelocity = 100 }: ParallaxProps) {
 }
 
 export const VelocityAnimation = () => {
+  const leftRef = useRef(null);
+  const rightRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      leftRef.current,
+      {
+        x: "100%",
+      },
+      { x: "0%", duration: 2, opacity: 1, delay: 0.5 }
+    );
+
+    gsap.fromTo(
+      rightRef.current,
+      {
+        x: "-100%",
+      },
+      { x: "0%", duration: 2, opacity: 1, delay: 0.5 }
+    );
+  }, []);
+
   return (
-    <>
-      <div className=" py-[6%] ">
+    <div className="banner-wrapper w-full overflow-hidden h-[90vh]  flex flex-col justify-between">
+      <div className="mt-[30%] md:mt-[15%] lg:mt-[12%] px-[2%]">
         <BannerTextSection />
       </div>
-      <section className="velocity-wrapper w-full py-[5%] ">
-        <motion.div
-          transition={{ duration: 3.5, delay: 0.5 }}
-          initial={{ x: "100%" }}
-          animate={{ x: "0%" }}
-        >
+      <section className="velocity-wrapper w-full  ">
+        <div ref={leftRef} className="opacity-0">
           <ParallaxText baseVelocity={-5}>Karan</ParallaxText>
-        </motion.div>
-        <motion.div
-          transition={{ duration: 3.5, delay: 0.5 }}
-          initial={{ x: "-100%" }}
-          animate={{ x: "0%" }}
-        >
+        </div>
+        <div ref={rightRef} className="opacity-0">
           <ParallaxText baseVelocity={5}>Chaudhary</ParallaxText>
-        </motion.div>
+        </div>
       </section>
-    </>
+    </div>
   );
 };

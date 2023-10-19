@@ -12,7 +12,7 @@ function NavbarComponent() {
 
   const controlNavbar = () => {
     const currentScrollY = window.scrollY;
-    if (currentScrollY <= 100) {
+    if (currentScrollY <= 150) {
       setShow(true);
     } else if (currentScrollY > lastScrollY) {
       setShow(false);
@@ -56,7 +56,7 @@ function NavbarComponent() {
         ref={navRef}
         className={`absolute w-full origin-top mb-10 transform bg-white ${
           show
-            ? "block animate-top-nav transition ease-in duration-700 delay-700"
+            ? "block animate-top-nav transition ease-in duration-1000 delay-700"
             : "animate-down-nav hidden"
         }`}
       >
