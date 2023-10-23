@@ -44,7 +44,7 @@ const ImageSection = () => {
       autoSleep: 60,
       force3D: true,
       nullTargetWarn: false,
-      trialWarn: false,
+      // trialWarn: false,
       units: { left: '%', top: '%', rotation: 'rad' },
     });
 

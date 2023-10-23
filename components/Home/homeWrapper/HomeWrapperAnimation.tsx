@@ -19,7 +19,7 @@ export default function HomeWrapperAnimaiton() {
         pin: true,
         start: "top center",
         end: "+=200px",
-        ease: "power2.inOut",
+        // ease: "power2.inOut",
 
         // markers: true,
       },
