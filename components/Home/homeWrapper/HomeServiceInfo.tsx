@@ -104,7 +104,7 @@ export const HomeServiceInfo = () => {
   return (
     <section
       ref={infoRef}
-      className="about-section-wrapper relative w-full  px-[5%] border border-red-500 pb-[5%] "
+      className="about-section-wrapper relative w-full  px-[5%] pb-[5%] "
     >
       <div
         ref={titleRef}

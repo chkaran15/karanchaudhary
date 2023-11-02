@@ -45,7 +45,7 @@ export default function HomeWrapperAnimaiton() {
         delay: 1,
         opacity: 1,
         y: 0,
-        markers: true,
+        // markers: true,
         // left: "50%",
         // transform: "translateX(-50%)",
       },

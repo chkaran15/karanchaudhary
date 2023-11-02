@@ -9,6 +9,7 @@ import { HomeServiceInfo } from "@/components/Home/homeWrapper/HomeServiceInfo";
 import HomeWrapperAnimaiton from "@/components/Home/homeWrapper/HomeWrapperAnimation";
 import { ImageWrapper } from "@/components/Home/homeWrapper/ImageWrapper";
 import ProjectSection from "@/components/Home/homeWrapper/ProjectSection";
+import CardScrollProject from "@/components/Home/homeWrapper/CardScrollProject";
 
 export default function Home() {
   return (
@@ -18,7 +19,15 @@ export default function Home() {
       <HomeAboutSection />
       <ImageWrapper />
       <HomeServiceInfo />
-      <ProjectSection />
+
+      <section className="hidden lg:block">
+        <ProjectSection />
+      </section>
+      {/* for mobile */}
+      <section className="block lg:hidden">
+        <CardScrollProject />
+      </section>
+
       {/* <HomeWrapperAnimaiton /> */}
       {/* <ImageSection /> */}
     </main>
