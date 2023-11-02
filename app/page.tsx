@@ -8,6 +8,7 @@ import { HomeServiceInfo } from "@/components/Home/homeWrapper/HomeServiceInfo";
 
 import HomeWrapperAnimaiton from "@/components/Home/homeWrapper/HomeWrapperAnimation";
 import { ImageWrapper } from "@/components/Home/homeWrapper/ImageWrapper";
+import ProjectSection from "@/components/Home/homeWrapper/ProjectSection";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <HomeAboutSection />
       <ImageWrapper />
       <HomeServiceInfo />
+      <ProjectSection />
       {/* <HomeWrapperAnimaiton /> */}
       {/* <ImageSection /> */}
     </main>

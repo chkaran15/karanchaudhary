@@ -103,3 +103,56 @@ transition: 1s ease-in;
     /* Apply animation */
     animation: slideInFromButtom 1s ease-in 1s forwards;
 }
+
+
+
+
+/* swiper css */
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    /* background: gray; */
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  
+  .project-swiper-container {
+      position: relative;
+  }
+  
+  .project-swiper-pagination{
+      position: absolute;
+      display: flex;
+      justify-content: end;
+      z-index: 1;
+      right: 5px;
+  }
+  .project-swiper-pagination > .swiper-pagination-bullet {
+      width: 12px !important;
+      height: 12px !important;
+      border-radius: 50% !important;
+      cursor: pointer;
+      background-color: white !important;
+      opacity: var(--swiper-pagination-bullet-inactive-opacity);
+    }
+    
+    .project-swiper-pagination .swiper-pagination-bullet-active {
+      background-color: black!important;
+      border: 1px solid white !important;
+    }
+    

@@ -2,6 +2,7 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { BsArrowUpRight } from "react-icons/bs";
 import Link from "next/link";
+import { GoDotFill } from "react-icons/go";
 
 const variants = {
   open: {
@@ -37,15 +38,15 @@ export const SocialItems = ({
         href={data?.url}
         target="_blank"
         onClick={toggle}
-        className={`icon-placeholder w-[90px] md:w-[110px] h-[20px] flex justify-between items-center cursor-pointer `}
-        style={{ color: data?.color }}
+        className={`icon-placeholder group w-[90px] md:w-[100px] h-[20px] flex justify-between items-center cursor-pointer `}
+        // style={{ color: data?.color }}
       >
         <h1 className={`text-sm md:text-lg cursor-pointer capitalize `}>
           {data?.name}
         </h1>
 
-        <div className="arrow-icon">
-          <BsArrowUpRight size={15} />
+        <div className="arrow-icon hidden group-hover:block ">
+          <GoDotFill size={15} />
         </div>
       </Link>
     </motion.li>

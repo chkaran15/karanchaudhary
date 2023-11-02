@@ -7,8 +7,8 @@ import { useRecoilState } from "recoil";
 import { navlinks } from "@/data/navlinks";
 import { sociallinks } from "@/data/sociallinks";
 import { SocialItems } from "./SocialItems";
-import { BsArrowUpRight } from "react-icons/bs";
 import gsap from "gsap";
+import { GoDotFill } from "react-icons/go";
 
 const variants = {
   open: {
@@ -61,12 +61,12 @@ export default function Navigation({ dateTime, meridiem }: NavDropDownProps) {
               />
             ))}
           </motion.ul>
-          <div className="absolute left-2 bottom-2 flex gap-2 md:gap-3 items-center cursor-pointer hover:text-lightblue">
-            <h1 className="text-xs md:text-base underline text-blue-700">
+          <div className="absolute group left-2 bottom-2 flex gap-2 md:gap-3 items-center cursor-pointer hover:text-lightblue">
+            <h1 className="text-xs md:text-base underline group-hover:text-lightblue">
               tharukaran930@gmail.com
             </h1>
-            <div className="arrow-icon hidden md:block">
-              <BsArrowUpRight size={15} color={"blue"} />
+            <div className="arrow-icon hidden group-hover:block group-hover:text-lightblue">
+              <GoDotFill size={15} />
             </div>
           </div>
 
