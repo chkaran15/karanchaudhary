@@ -52,7 +52,10 @@ export const ImageWrapper = () => {
         // markers: true,
       },
       width: "100%",
+      height: "100vh",
+      objectFit: "cover",
       y: -150,
+      scaleY: 2,
     });
   }, []);
 
@@ -63,7 +66,7 @@ export const ImageWrapper = () => {
     >
       <div
         ref={moveRef}
-        className="about-buttom  w-[20%] h-full top-0  absolute left-[50%]  translate-x-[-50%] "
+        className="about-buttom  w-[20%] h-[20vh] scale-1 top-0 absolute left-[50%]  translate-x-[-50%] "
       >
         <video
           className="w-full h-full object-cover "

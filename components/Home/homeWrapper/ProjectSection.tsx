@@ -15,9 +15,9 @@ const ProjectSection = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: animationItemRef.current,
-        start: "top 75%",
-        end: `top 25%`,
-        scrub: 1,
+        start: "top 65%",
+        end: `top 15%`,
+        scrub: 2,
         // markers: true,
       },
     });
@@ -27,18 +27,28 @@ const ProjectSection = () => {
         ref.current,
         {
           opacity: 0,
-          y: 200,
+          y: 100,
         },
         {
           opacity: 1,
           y: 0,
-          duration: 1,
-          delay: 0.2 * (index + 1), // Adjust delay dynamically based on index
+          duration: 1.5 * (index + 1),
+          delay: 0.3 * (index + 1), // Adjust delay dynamically based on index
         }
       );
     });
 
-    tl.to(titleRef.current, {
+    const texttl = gsap.timeline({
+      scrollTrigger: {
+        trigger: animationItemRef.current,
+        start: "top 75%",
+        end: `top 25%`,
+        scrub: 1,
+        // markers: true,
+      },
+    });
+
+    texttl.to(titleRef.current, {
       duration: 0.3,
       opacity: 1,
       y: 0,

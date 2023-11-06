@@ -10,6 +10,7 @@ import HomeWrapperAnimaiton from "@/components/Home/homeWrapper/HomeWrapperAnima
 import { ImageWrapper } from "@/components/Home/homeWrapper/ImageWrapper";
 import ProjectSection from "@/components/Home/homeWrapper/ProjectSection";
 import CardScrollProject from "@/components/Home/homeWrapper/CardScrollProject";
+import { TestimonialsSections } from "@/components/Home/homeWrapper/TestimonialsSection";
 
 export default function Home() {
   return (
@@ -27,6 +28,8 @@ export default function Home() {
       <section className="block lg:hidden">
         <CardScrollProject />
       </section>
+
+      <TestimonialsSections />
 
       {/* <HomeWrapperAnimaiton /> */}
       {/* <ImageSection /> */}
