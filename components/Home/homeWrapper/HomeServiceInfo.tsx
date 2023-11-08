@@ -104,7 +104,7 @@ export const HomeServiceInfo = () => {
   return (
     <section
       ref={infoRef}
-      className="about-section-wrapper relative w-full  px-[5%] pb-[5%] "
+      className="about-section-wrapper relative w-full px-[5%] pb-[5%] "
     >
       <div
         ref={titleRef}
@@ -133,7 +133,7 @@ export const HomeServiceInfo = () => {
         </div>
         <div
           ref={textRef}
-          className="about-right-wrapper text-base lg:text-[30px] lg:leading-8 lg:trackling-normal lg:w-[45%]"
+          className="about-right-wrapper w-full  text-base lg:text-[30px] lg:leading-8 lg:trackling-normal lg:w-[45%]"
         >
           <h1>
             {/* I'm excelled in numerous projects, and my achievements are

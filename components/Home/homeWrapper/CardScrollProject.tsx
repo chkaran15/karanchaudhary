@@ -44,7 +44,7 @@ const CardScrollProject = () => {
 
   return (
     <div
-      className="fullscreen bg-green-300  flex w-full h-[150vh] py-10 px-4 lg:px-10 overflow-hidden "
+      className="fullscreen  flex w-full h-[150vh] py-10 px-4 lg:px-10 overflow-hidden "
       id="second"
       ref={animationItemRef}
     >
@@ -54,7 +54,7 @@ const CardScrollProject = () => {
           .map((_, i) => (
             <div
               key={i}
-              className="w-full lg:w-[30%] h-[600px] absolute bottom-0 hover:z-[1] hover:shadow-2xl hover:shadow-white"
+              className="w-full lg:w-[350px] h-[600px] absolute bottom-0 hover:z-[1] hover:shadow-2xl hover:shadow-white"
               ref={animationItemRefs[i]}
             >
               <ProjectCard />

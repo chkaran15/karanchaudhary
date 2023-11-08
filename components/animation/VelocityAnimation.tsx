@@ -13,6 +13,8 @@ import {
 import { wrap } from "@motionone/utils";
 import { BannerTextSection } from "../Home/homeWrapper/BannerTextSection";
 import gsap from "gsap";
+import Lottie from "react-lottie-player";
+import AnimationJson from "../Home/homeWrapper/services/animation.json";
 
 interface ParallaxProps {
   children: string;
@@ -96,17 +98,30 @@ export const VelocityAnimation = () => {
   }, []);
 
   return (
-    <div className="banner-wrapper w-full overflow-hidden h-[90vh]  flex flex-col justify-between">
-      <div className="mt-[30%] md:mt-[15%] lg:mt-[12%] px-[2%]">
+    <div className="banner-wrapper w-full overflow-hidden  flex flex-col justify-between">
+      <div className="mt-[30%] md:mt-[15%] lg:mt-[12%] px-[2%] flex flex-col md:flex-row justify-between ">
         <BannerTextSection />
+        <div className=" hidden md:block -mt-24">
+          <Lottie
+            loop
+            animationData={AnimationJson}
+            play
+            style={{ width: 600, height: 600 }}
+          />
+        </div>
+        <div className=" block md:hidden ">
+          <Lottie
+            loop
+            animationData={AnimationJson}
+            play
+            style={{ width: 370, height: 550 }}
+          />
+        </div>
       </div>
       <section className="velocity-wrapper w-full  ">
         <div ref={leftRef} className="opacity-0">
           <ParallaxText baseVelocity={-7}>Make Yourself Shine</ParallaxText>
         </div>
-        {/* <div ref={rightRef} className="opacity-0">
-          <ParallaxText baseVelocity={5}>Chaudhary</ParallaxText>
-        </div> */}
       </section>
     </div>
   );

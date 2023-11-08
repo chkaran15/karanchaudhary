@@ -93,8 +93,8 @@ export const BannerTextSection = () => {
   }, []);
 
   return (
-    <div className="w-[60%] ">
-      <h1 className="progress relative  text-4xl md:text-[60px] font-normal trackling-normal  uppercase flex flex-wrap gap-3 ">
+    <div className=" w-full md:w-[50%]  ">
+      <h1 className="progress relative  text-4xl md:text-[60px] font-normal leading-[0.7] uppercase flex flex-wrap gap-6 ">
         {/* A Creative Design Implementation & web Development Experiences */}
         <span ref={textRef} className="text opacity-0 ">
           A
@@ -105,8 +105,6 @@ export const BannerTextSection = () => {
         <span ref={text2Ref} className="text opacity-0 ">
           Design
         </span>
-        {/* <div ref={textRef} className="text  ">Implementation</div>
-        <div ref={textRef} className="text  ">&</div> */}
         <span ref={text3Ref} className="text opacity-0 ">
           web
         </span>

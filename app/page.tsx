@@ -1,24 +1,18 @@
-// import HeroSection from "@/components/Home/homeWrapper/HeroSection";
-import ImageSection from "@/components/Home/homeWrapper/ImageSection";
-// import { VideoSection } from "@/components/Home/homeWrapper/BannerTextSection";
-import BannerSection from "@/components/Home/homeWrapper/BannerSection";
 import { VelocityAnimation } from "@/components/animation/VelocityAnimation";
 import { HomeAboutSection } from "@/components/Home/homeWrapper/HomeAboutSection";
 import { HomeServiceInfo } from "@/components/Home/homeWrapper/HomeServiceInfo";
-
-import HomeWrapperAnimaiton from "@/components/Home/homeWrapper/HomeWrapperAnimation";
-import { ImageWrapper } from "@/components/Home/homeWrapper/ImageWrapper";
+import { VideoWrapper } from "@/components/Home/homeWrapper/VideoWrapper";
 import ProjectSection from "@/components/Home/homeWrapper/ProjectSection";
 import CardScrollProject from "@/components/Home/homeWrapper/CardScrollProject";
 import { TestimonialsSections } from "@/components/Home/homeWrapper/TestimonialsSection";
+import { ServiceSection } from "@/components/Home/homeWrapper/services/ServiceSection";
 
 export default function Home() {
   return (
-    <main className="home-page-wrapper overflow-hidden ">
-      {/* <BannerSection /> */}
+    <main className="home-page-wrapper  ">
       <VelocityAnimation />
       <HomeAboutSection />
-      <ImageWrapper />
+      <VideoWrapper />
       <HomeServiceInfo />
 
       <section className="hidden lg:block">
@@ -30,9 +24,8 @@ export default function Home() {
       </section>
 
       <TestimonialsSections />
-
-      {/* <HomeWrapperAnimaiton /> */}
-      {/* <ImageSection /> */}
+      <ServiceSection />
+      <section className="h-screen"></section>
     </main>
   );
 }

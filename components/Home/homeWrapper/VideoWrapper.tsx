@@ -4,7 +4,7 @@ import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export const ImageWrapper = () => {
+export const VideoWrapper = () => {
   const aboutRef = useRef<any>(null);
   const moveRef = useRef<any>(null);
 
