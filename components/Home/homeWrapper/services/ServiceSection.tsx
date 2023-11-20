@@ -118,10 +118,10 @@ export const ServiceSection = () => {
   return (
     <section
       ref={serviceRef}
-      className="service-section w-full relative flex flex-col lg:flex-row justify-evenly p-2 border my-24 "
+      className="service-section w-full relative flex flex-col lg:flex-row justify-evenly py-[10%] p-2 my-24 "
     >
       <div className="service-title relative ">
-        <div className=" service-title-section sticky top-10">
+        <div className=" service-title-section sticky top-[50%] translate-y-[-50%]">
           <h1
             ref={titleRef}
             className=" section-title-text text-[100px] opacity-0 capitalize"

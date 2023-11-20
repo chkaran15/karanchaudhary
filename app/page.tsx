@@ -14,17 +14,16 @@ export default function Home() {
       <HomeAboutSection />
       <VideoWrapper />
       <HomeServiceInfo />
-
-      <section className="hidden lg:block">
+      <section className="hidden lg:block py-[8%]">
         <ProjectSection />
       </section>
       {/* for mobile */}
-      <section className="block lg:hidden">
+      <section className="block lg:hidden py-[8%]">
         <CardScrollProject />
       </section>
-
-      <TestimonialsSections />
       <ServiceSection />
+      <TestimonialsSections />
+
       <section className="h-screen"></section>
     </main>
   );

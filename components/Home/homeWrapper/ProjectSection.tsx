@@ -57,7 +57,7 @@ const ProjectSection = () => {
 
   return (
     <div
-      className="fullscreen border  flex flex-col gap-20 w-full h-[auto] py-10 px-4 lg:px-10 overflow-hidden "
+      className="fullscreen  flex flex-col gap-20 w-full h-[auto] py-10 px-4 lg:px-10 overflow-hidden "
       id="second"
       ref={animationItemRef}
     >
