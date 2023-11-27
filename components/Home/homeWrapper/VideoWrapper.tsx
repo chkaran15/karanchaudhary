@@ -54,6 +54,9 @@ export const VideoWrapper = () => {
       width: "100%",
       height: "100vh",
       objectFit: "cover",
+      position:"absolute",
+      left:"50%",
+      translateX: "-50%",
       y: -150,
       scaleY: 2,
     });

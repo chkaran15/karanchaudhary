@@ -44,12 +44,12 @@ const ProjectSection = () => {
         start: "top 75%",
         end: `top 25%`,
         scrub: 1,
-        // markers: true,
+        markers: true,
       },
     });
 
     texttl.to(titleRef.current, {
-      duration: 0.3,
+      duration: 0.5,
       opacity: 1,
       y: 0,
     });
@@ -57,7 +57,7 @@ const ProjectSection = () => {
 
   return (
     <div
-      className="fullscreen  flex flex-col gap-20 w-full h-[auto] py-10 px-4 lg:px-10 overflow-hidden "
+      className="fullscreen  flex flex-col gap-20 w-full h-[auto] py-10"
       id="second"
       ref={animationItemRef}
     >

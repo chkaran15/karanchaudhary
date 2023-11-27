@@ -9,7 +9,7 @@ import { ServiceSection } from "@/components/Home/homeWrapper/services/ServiceSe
 
 export default function Home() {
   return (
-    <main className="home-page-wrapper  ">
+    <main className="home-page-wrapper w-full px-4 lg:px-10 overflow-hidden  ">
       <VelocityAnimation />
       <HomeAboutSection />
       <VideoWrapper />

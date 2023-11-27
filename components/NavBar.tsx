@@ -60,7 +60,7 @@ function NavBar() {
   const { height } = useDimensions(containerRef) || { height: 600 };
 
   return (
-    <nav className="navbar-wrapper px-4 md:px-10  shadow-2xl  py-[19px] flex justify-between items-center">
+    <nav className="navbar-wrapper px-4 lg:px-10 overflow-hidden  shadow-2xl  py-[19px] flex justify-between items-center">
       <Logo />
       <motion.div
         onClick={() => setIsActive(!isActive)}

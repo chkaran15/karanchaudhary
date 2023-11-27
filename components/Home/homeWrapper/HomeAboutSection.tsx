@@ -94,7 +94,7 @@ export const HomeAboutSection = () => {
   return (
     <section
       ref={aboutRef}
-      className="about-section-wrapper relative py-[8%]  w-full flex justify-center items-center  px-[5%]"
+      className="about-section-wrapper relative py-[8%]  w-full flex justify-center items-center "
     >
       <div ref={textRef} className="about-wrapper flex flex-col gap-20  ">
         <div ref={titleRef} className="text-[80px] opacity-0 translate-y-10 ">
@@ -102,7 +102,7 @@ export const HomeAboutSection = () => {
         </div>
         <div
           ref={infoRef}
-          className="flex flex-col lg:flex-row gap-20 justify-between px-[3%]"
+          className="flex flex-col lg:flex-row gap-20 justify-between"
         >
           <div
             ref={leftRef}

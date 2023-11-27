@@ -8,6 +8,8 @@ const CardScrollProject = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const animationItemRefs = Array.from({ length: 3 }, () => useRef<any>(null));
   const animationItemRef = useRef(null);
+  const titleRef = useRef(null);
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -40,6 +42,22 @@ const CardScrollProject = () => {
         }
       );
     });
+
+    const texttl = gsap.timeline({
+      scrollTrigger: {
+        trigger: animationItemRef.current,
+        start: "top 75%",
+        end: `top 25%`,
+        scrub: 1,
+        // markers: true,
+      },
+    });
+
+    texttl.to(titleRef.current, {
+      duration: 0.5,
+      opacity: 1,
+      y: 0,
+    });
   }, []);
 
   return (
@@ -48,6 +66,12 @@ const CardScrollProject = () => {
       id="second"
       ref={animationItemRef}
     >
+      <div
+        ref={titleRef}
+        className=" text-[40px] md:text-[80px] opacity-0 translate-y-10"
+      >
+        Projects
+      </div>
       <div className="wrapp relative w-full h-full ">
         {Array(3)
           .fill("_")

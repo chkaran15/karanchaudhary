@@ -94,7 +94,7 @@ export const BannerTextSection = () => {
 
   return (
     <div className=" w-full md:w-[50%]  ">
-      <h1 className="progress relative  text-4xl md:text-[60px] font-normal leading-[0.7] uppercase flex flex-wrap gap-6 ">
+      <h1 className="progress relative  text-4xl sm:text-[60px] md:text-[70px] font-normal leading-[0.7] uppercase flex flex-wrap gap-6 ">
         {/* A Creative Design Implementation & web Development Experiences */}
         <span ref={textRef} className="text opacity-0 ">
           A

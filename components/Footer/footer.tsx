@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="footer-wrapper-container py-6 bg-black  px-[2%] flex flex-wrap gap-4 justify-around items-center">
+    <footer className="footer-wrapper-container py-6 bg-black  px-4 lg:px-10 overflow-hidden flex flex-wrap gap-4 justify-around items-center">
       <div className="footer-content w-[200px]">
         <h1 className="important-links-wrapper text-gray-400 text-2xl ">
           Important Links
@@ -26,13 +26,17 @@ const Footer = () => {
 
         <ul className="important-link-item ">
           {sociallinks?.map((link) => (
-            <li className=" text-gray-500 hover:text-white my-2 capitalize" key={link?.id}>
-              <Link href={link?.url} target="_blank">{link?.name}</Link>
+            <li
+              className=" text-gray-500 hover:text-white my-2 capitalize"
+              key={link?.id}
+            >
+              <Link href={link?.url} target="_blank">
+                {link?.name}
+              </Link>
             </li>
           ))}
         </ul>
       </div>
-
     </footer>
   );
 };

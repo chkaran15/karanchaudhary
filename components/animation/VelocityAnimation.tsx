@@ -98,10 +98,10 @@ export const VelocityAnimation = () => {
   }, []);
 
   return (
-    <div className="banner-wrapper w-full overflow-hidden  flex flex-col justify-between">
-      <div className="mt-[30%] md:mt-[15%] lg:mt-[12%] px-[2%] flex flex-col md:flex-row justify-between ">
+    <div className="banner-wrapper w-full   flex flex-col justify-between ">
+      <div className="mt-[40%]  md:mt-[15%] lg:mt-[12%]  flex flex-col md:flex-row justify-between ">
         <BannerTextSection />
-        <div className=" hidden md:block -mt-24">
+        <div className=" hidden  -mt-24 lg:flex justify-end">
           <Lottie
             loop
             animationData={AnimationJson}
@@ -109,7 +109,7 @@ export const VelocityAnimation = () => {
             style={{ width: 600, height: 600 }}
           />
         </div>
-        <div className=" block md:hidden ">
+        <div className=" lg:hidden -mt-24 flex justify-center ">
           <Lottie
             loop
             animationData={AnimationJson}
@@ -118,11 +118,11 @@ export const VelocityAnimation = () => {
           />
         </div>
       </div>
-      <section className="velocity-wrapper w-full  ">
+      {/* <section className="velocity-wrapper w-full  ">
         <div ref={leftRef} className="opacity-0">
           <ParallaxText baseVelocity={-7}>Make Yourself Shine</ParallaxText>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

@@ -104,7 +104,7 @@ export const HomeServiceInfo = () => {
   return (
     <section
       ref={infoRef}
-      className="about-section-wrapper relative w-full py-[10%] px-[5%] pb-[5%] "
+      className="about-section-wrapper relative w-full py-[10%]  pb-[5%] "
     >
       <div
         ref={titleRef}
@@ -112,7 +112,7 @@ export const HomeServiceInfo = () => {
       >
         Project and Collaboration
       </div>
-      <div className="about-wrapper flex flex-col pt-10 md:flex-row gap-20 px-[3%]  ">
+      <div className="about-wrapper flex flex-col item-center pt-10 md:flex-row gap-20   ">
         <div className="about-left-wrapper text-[28px] md:text-[40px] md:w-[60%]">
           <h1
             ref={itemRef}
@@ -135,7 +135,7 @@ export const HomeServiceInfo = () => {
           ref={textRef}
           className="about-right-wrapper w-full  text-base lg:text-[30px] lg:leading-8 lg:trackling-normal lg:w-[45%]"
         >
-          <h1>
+          <h1 className="text-right md:mt-10">
             {/* I'm excelled in numerous projects, and my achievements are
             well-documented in my extensive portfolio of case studies. I have
             the evidence to demonstrate my expertise and successful outcomes. */}
