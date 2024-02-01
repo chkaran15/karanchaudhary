@@ -47,7 +47,7 @@ export const ServiceSection = () => {
   const contentRef = useRef<any>(null);
 
   const serviceRef = useRef<any>(null);
-
+  const serviceFrameRef = useRef<any>(null);
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const serviceItemRefs = Array.from({ length: 5 }, () => useRef<any>(null));
 
@@ -56,9 +56,10 @@ export const ServiceSection = () => {
 
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: serviceRef.current,
+        trigger: serviceFrameRef.current,
         start: "top 70%",
-        end: () => "+=" + serviceRef.current.offsetHeight,
+        // end: "+=800px",
+        end: () => "+=" + serviceFrameRef.current?.offsetHeight,
         scrub: 0.7,
         markers: true,
       },
@@ -120,19 +121,19 @@ export const ServiceSection = () => {
   return (
     <div
       ref={serviceRef}
-      className="service-section  w-full border  h-screen flex flex-col lg:flex-row justify-evenly py-[10%] p-2 my-24 px-4 lg:px-10 overflow-y-scroll "
+      className="service-section w-full border  h-screen flex flex-col lg:flex-row justify-evenly py-[10%] p-2 my-24 px-4 lg:px-10 overflow-y-scroll "
     >
-        <div className="service-title-section  sticky top-0 border ">
-          <h1
-            ref={titleRef}
-            className="service-title-text text-[100px] opacity-0 capitalize"
-          >
-            services
-          </h1>
-          <p ref={contentRef}>We provide very good services</p>
-        </div>
+      <div className="service-title-section sticky top-0  border ">
+        <h1
+          ref={titleRef}
+          className="service-title-text text-[100px] opacity-0 capitalize"
+        >
+          services
+        </h1>
+        <p ref={contentRef}>We provide very good services</p>
+      </div>
 
-      <div className="flex flex-col gap-8 h-screen ">
+      <div ref={serviceFrameRef} className="flex flex-col gap-8 h-auto">
         {data_animation.map((item, i) => (
           <div
             key={i}
