@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -53,7 +54,7 @@ const ProjectSection = () => {
       opacity: 1,
       y: 0,
     });
-  }, [animationItemRefs]);
+  }, []);
 
   return (
     <div
@@ -77,7 +78,7 @@ const ProjectSection = () => {
               className="w-full lg:w-[30%] "
               ref={animationItemRefs[i]}
             >
-              <ProjectCard />
+              <ProjectCard timing={3000 + i * 100} />
             </div>
           ))}
       </div>

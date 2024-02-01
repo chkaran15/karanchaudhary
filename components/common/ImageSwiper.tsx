@@ -1,12 +1,11 @@
 "use client";
-import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import Image from "next/image";
 
-export default function App() {
+export default function ImageSwiper({ timing }:{ timing: number }) {
   return (
     <>
       <Swiper
@@ -18,9 +17,9 @@ export default function App() {
           el: ".project-swiper-pagination",
         }}
         autoplay={{
-          delay: 3000,
+          delay: timing ? timing : 3000,
         }}
-        modules={[Pagination]}
+        modules={[Pagination, Autoplay, Navigation]}
         className="project-swiper-container "
       >
         {Array(5)

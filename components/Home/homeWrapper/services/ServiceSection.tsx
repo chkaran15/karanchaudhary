@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import Lottie from "react-lottie-player";
 import AnimationJson from "./animation.json";
@@ -37,6 +38,7 @@ const data_animation = [
       "this is the content about react this is the content about react this is the content about react ",
   },
 ];
+
 export const ServiceSection = () => {
   const [play, setPlay] = useState(false);
   const [index, setIndex] = useState(0);
@@ -55,10 +57,10 @@ export const ServiceSection = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: serviceRef.current,
-        start: "top 80%",
+        start: "top 70%",
         end: () => "+=" + serviceRef.current.offsetHeight,
         scrub: 0.7,
-        // markers: true,
+        markers: true,
       },
     });
 
@@ -72,8 +74,8 @@ export const ServiceSection = () => {
         {
           opacity: 1,
           y: 0,
-          duration: 0.5,
-          delay: 0.1 * (index + 1), // Adjust delay dynamically based on index
+          duration: 0.3,
+          delay: 0.1 * (index + 1),
         }
       );
     });
@@ -116,23 +118,21 @@ export const ServiceSection = () => {
   }, []);
 
   return (
-    <section
+    <div
       ref={serviceRef}
-      className="service-section w-full  border relative flex flex-col lg:flex-row justify-evenly py-[10%] p-2 my-24 px-4 lg:px-10 "
+      className="service-section  w-full border  h-screen flex flex-col lg:flex-row justify-evenly py-[10%] p-2 my-24 px-4 lg:px-10 overflow-y-scroll "
     >
-      <div className="service-title relative  ">
-        <div className=" service-title-section  sticky top-10 translate-y-[-50%]">
+        <div className="service-title-section  sticky top-0 border ">
           <h1
             ref={titleRef}
-            className=" section-title-text text-[100px] opacity-0 capitalize"
+            className="service-title-text text-[100px] opacity-0 capitalize"
           >
             services
           </h1>
-          <p ref={contentRef}>We provides very good services</p>
+          <p ref={contentRef}>We provide very good services</p>
         </div>
-      </div>
 
-      <div className="flex flex-col gap-8 ">
+      <div className="flex flex-col gap-8 h-screen ">
         {data_animation.map((item, i) => (
           <div
             key={i}
@@ -155,6 +155,6 @@ export const ServiceSection = () => {
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 };

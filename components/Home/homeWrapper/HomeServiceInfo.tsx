@@ -1,7 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-import Link from "next/link";
 import React, { useEffect, useRef } from "react";
-import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 

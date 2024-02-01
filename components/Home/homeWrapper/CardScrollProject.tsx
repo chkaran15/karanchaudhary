@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -58,7 +59,7 @@ const CardScrollProject = () => {
       opacity: 1,
       y: 0,
     });
-  }, [animationItemRefs]);
+  }, []);
 
   return (
     <div
@@ -81,7 +82,7 @@ const CardScrollProject = () => {
               className="w-full lg:w-[350px] h-[600px] absolute bottom-0 hover:z-[1] hover:shadow-2xl hover:shadow-white"
               ref={animationItemRefs[i]}
             >
-              <ProjectCard />
+              <ProjectCard timing={3000 + i * 100} />
             </div>
           ))}
       </div>

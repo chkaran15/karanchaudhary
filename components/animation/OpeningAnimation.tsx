@@ -13,6 +13,7 @@ export const OpeningAnimation = () => {
     "こんにちは",
   ];
   const [title, setTitle] = useState("hello");
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const settingNewTitle = () => {
     setInterval(() => {
       setTitle(data[Math.floor(Math.random() * data.length)]);
@@ -20,7 +21,7 @@ export const OpeningAnimation = () => {
   };
   useEffect(() => {
     settingNewTitle();
-  }, []);
+  }, [settingNewTitle]);
 
   return (
     <motion.div

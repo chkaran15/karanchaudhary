@@ -5,7 +5,7 @@ import ImageSwiper from "./ImageSwiper";
 import gsap from "gsap";
 import Image from "next/image";
 
-export const ProjectCard = () => {
+export const ProjectCard = ({ timing }: { timing: number }) => {
   const lineRef = useRef<any>(null);
   const linkRef = useRef<any>(null);
 
@@ -52,27 +52,27 @@ export const ProjectCard = () => {
   };
 
   return (
-    <div
-      onMouseEnter={mouseEnterProjectname}
-      onMouseLeave={mouseLeaveProjectname}
-      className="w-full h-full flex flex-col gap-10 bg-black text-white animation-item ease p-10  rounded-lg group  hover:scale-110 hover:shadow-2xl transition duration-700 ease-out "
-    >
+    <div className="w-full h-full flex flex-col gap-10 bg-black text-white animation-item ease p-10  rounded-lg group  hover:scale-110 hover:shadow-2xl transition duration-700 ease-out ">
       <div className="project-wrapper w-full h-full flex flex-col sm:flex-row gap-6 justify-between ">
-        <div className="project-logo relative w-[60px] h-[60px] rounded-full bg-white overflow-hidden hover:cursor-pointer hover:scale-150 transition duration-700 ease-out">
+        <div className="project-logo relative w-[60px] h-[60px] rounded-full bg-white overflow-hidden hover:cursor-pointer ">
           <Image src="/home/banner.jpg" fill alt="design" />
         </div>
         <div className="project-image-swiper w-full lg:w-[270px] h-[250px]   ">
           {/* Image swiper */}
-          <ImageSwiper />
+          <ImageSwiper timing={timing} />
         </div>
       </div>
 
       <div className="project-details-wrapper flex flex-col gap-4">
-        <h1 className="project-title  text-[42px] lg:text-[62px] font-semibold hover:cursor-pointer ">
+        <h1
+          onMouseEnter={mouseEnterProjectname}
+          onMouseLeave={mouseLeaveProjectname}
+          className="project-title  text-[42px] lg:text-[62px] font-semibold hover:cursor-pointer "
+        >
           Project Name
         </h1>
         <div ref={lineRef} className="w-0 h-[2px] bg-white -mt-4"></div>
-        <div className="project-site-details">
+        <div className="project-site-details ">
           <Link
             href={`/home`}
             className="project-site-name"
