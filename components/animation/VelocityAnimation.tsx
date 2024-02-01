@@ -98,7 +98,7 @@ export const VelocityAnimation = () => {
   }, []);
 
   return (
-    <div className="banner-wrapper w-full   flex flex-col justify-between ">
+    <div className="banner-wrapper w-full   flex flex-col justify-between px-4 lg:px-10">
       <div className="mt-[40%]  md:mt-[15%] lg:mt-[12%]  flex flex-col md:flex-row justify-between ">
         <BannerTextSection />
         <div className=" hidden  -mt-24 lg:flex justify-end">

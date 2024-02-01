@@ -33,7 +33,7 @@ const CardScrollProject = () => {
         {
           opacity: 1,
           y: 0,
-          duration: 1,
+          duration: 0.7,
           position: "absolute",
           borderRadius: "20px",
           boxShadow: "rgba(255, 255, 255, 0.35) 5px 5px 5px 10px",
@@ -58,11 +58,11 @@ const CardScrollProject = () => {
       opacity: 1,
       y: 0,
     });
-  }, []);
+  }, [animationItemRefs]);
 
   return (
     <div
-      className="fullscreen  flex w-full h-[150vh] py-10 px-4 lg:px-10 overflow-hidden "
+      className="fullscreen  flex flex-col w-full h-[150vh] py-10 px-4 lg:px-10 overflow-hidden "
       id="second"
       ref={animationItemRef}
     >

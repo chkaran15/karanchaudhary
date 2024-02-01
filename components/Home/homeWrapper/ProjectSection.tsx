@@ -44,7 +44,7 @@ const ProjectSection = () => {
         start: "top 75%",
         end: `top 25%`,
         scrub: 1,
-        markers: true,
+        // markers: true,
       },
     });
 
@@ -53,7 +53,7 @@ const ProjectSection = () => {
       opacity: 1,
       y: 0,
     });
-  }, []);
+  }, [animationItemRefs]);
 
   return (
     <div

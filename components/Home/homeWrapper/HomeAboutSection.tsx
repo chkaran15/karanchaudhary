@@ -94,7 +94,7 @@ export const HomeAboutSection = () => {
   return (
     <section
       ref={aboutRef}
-      className="about-section-wrapper relative py-[8%]  w-full flex justify-center items-center "
+      className="about-section-wrapper relative py-[8%]  w-full flex justify-center items-center px-4 lg:px-10 "
     >
       <div ref={textRef} className="about-wrapper flex flex-col gap-20  ">
         <div ref={titleRef} className="text-[80px] opacity-0 translate-y-10 ">

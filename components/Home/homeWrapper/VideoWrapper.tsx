@@ -47,39 +47,38 @@ export const VideoWrapper = () => {
       scrollTrigger: {
         trigger: aboutRef.current,
         scrub: 1,
-        start: "top 500px",
-        end: "+=400px",
+        start: "top 600px",
+        end: "+=500px",
         // markers: true,
       },
       width: "100%",
-      height: "100vh",
+      height: "110vh",
       objectFit: "cover",
-      position:"absolute",
-      left:"50%",
-      translateX: "-50%",
       y: -150,
-      scaleY: 2,
+      
     });
   }, []);
 
   return (
     <section
       ref={aboutRef}
-      className="about-section-wrapper w-full relative h-screen overflow-hidden"
+      className="about-section-wrapper w-full h-[110vh] relative overflow-hidden"
     >
-      <div
-        ref={moveRef}
-        className="about-buttom  w-[20%] h-[20vh] scale-1 top-0 absolute left-[50%]  translate-x-[-50%] "
-      >
-        <video
-          className="w-full h-full object-cover "
-          autoPlay
-          loop
-          muted
-          playsInline
+      <div className="w-full h-full flex justify-center items-start">
+        <div
+          ref={moveRef}
+          className="about-buttom  w-[20%] h-[20vh] scale-1   "
         >
-          <source src="https://res.cloudinary.com/dftgrb9fb/video/upload/v1696534014/video_2160p_ix2a9g.mp4" />
-        </video>
+          <video
+            className="w-full h-full object-cover "
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source src="https://res.cloudinary.com/dftgrb9fb/video/upload/v1696534014/video_2160p_ix2a9g.mp4" />
+          </video>
+        </div>
       </div>
     </section>
   );

@@ -40,7 +40,7 @@ export const TestimonialsSections = () => {
   return (
     <section
       ref={testimonialRef}
-      className=" flex flex-col justify-center gap-20 w-full h-[auto] py-10 px-4 lg:px-10 overflow-hidden "
+      className=" flex flex-col justify-center gap-20 w-full h-[auto] py-10 overflow-hidden px-4 lg:px-10 "
     >
       <div
         ref={titleRef}

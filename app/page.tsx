@@ -9,16 +9,16 @@ import { ServiceSection } from "@/components/Home/homeWrapper/services/ServiceSe
 
 export default function Home() {
   return (
-    <main className="home-page-wrapper w-full px-4 lg:px-10 overflow-hidden  ">
+    <main className="home-page-wrapper w-full  overflow-hidden  ">
       <VelocityAnimation />
       <HomeAboutSection />
       <VideoWrapper />
       <HomeServiceInfo />
-      <section className="hidden lg:block py-[8%]">
+      <section className="hidden lg:block py-[8%] px-4 lg:px-10">
         <ProjectSection />
       </section>
       {/* for mobile */}
-      <section className="block lg:hidden py-[8%]">
+      <section className="block lg:hidden py-[8%] px-4 lg:px-10">
         <CardScrollProject />
       </section>
       <ServiceSection />
