@@ -33,7 +33,7 @@ const CardScrollProject = () => {
         {
           opacity: 1,
           y: 0,
-          duration: 0.7,
+          duration: 1,
           position: "absolute",
           borderRadius: "20px",
           boxShadow: "rgba(255, 255, 255, 0.35) 5px 5px 5px 10px",
