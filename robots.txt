@@ -1,4 +1,2 @@
 User-Agent: *
-Allow: /
-Disallow: /private/
-Sitemap: https://chaudharykaran.com.np/sitemap.xml
+sitemap: https://chaudharykaran.com.np/sitemap.xml
